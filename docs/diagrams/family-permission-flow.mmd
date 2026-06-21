@@ -1,0 +1,29 @@
+flowchart TD
+    Verified["Verified user + required consent"] --> Guard{"Family onboarding complete?"}
+    Guard -->|"No"| Name["Name family group"]
+    Name --> Dependents["Select Father / Mother"]
+    Dependents --> Invite["Optional caregiver invitation"]
+    Invite --> Preview["Preview least-privilege permissions"]
+    Preview --> Review["Review care circle"]
+    Review --> Create["Create family atomically"]
+    Create --> Dashboard["Caregiver dashboard"]
+    Guard -->|"Yes"| Dashboard
+
+    Dashboard --> Manage["Manage family"]
+    Manage --> Invitation{"Invitation status"}
+    Invitation -->|"Pending"| Accept["Accept invitation"]
+    Invitation -->|"Pending"| RevokeInvite["Revoke invitation"]
+    Accept --> Secondary["Secondary caregiver member"]
+    Secondary --> Permissions["Edit explicit permissions"]
+    Secondary --> Remove["Remove access"]
+    Secondary --> Transfer["Transfer ownership"]
+    Permissions --> Audit["Append sensitive activity event"]
+    RevokeInvite --> Audit
+    Remove --> Audit
+    Transfer --> Atomic["Old owner → secondary\nNew owner → owner"]
+    Atomic --> Audit
+
+    Documents{"Document access enabled?"}
+    Permissions --> Documents
+    Documents -->|"No"| Deny["Deny document access"]
+    Documents -->|"Yes, explicit"| Allow["Allow document access"]

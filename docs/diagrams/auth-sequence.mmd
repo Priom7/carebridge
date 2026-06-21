@@ -1,0 +1,32 @@
+sequenceDiagram
+    autonumber
+    actor User
+    participant App as Flutter app
+    participant Auth as Auth state adapter
+    participant API as Next.js API (BE-004)
+    participant Firebase as Firebase Auth (BE-004)
+
+    User->>App: Create account details
+    App->>App: Validate fields and password confirmation
+    App->>Auth: beginRegistration()
+    Note over Auth: UX-003 uses deterministic mock state
+    Auth-->>App: verificationRequired
+    App-->>User: Verification screen
+    User->>App: Enter six-digit code
+    App->>Auth: completeVerification()
+    Auth-->>App: consentRequired
+    App-->>User: Terms, privacy, and health-data consent
+    User->>App: Accept required consent
+    App->>Auth: completeConsent()
+    Auth-->>App: authenticated
+    App-->>User: Caregiver dashboard
+
+    rect rgb(235, 245, 255)
+        Note over App,Firebase: Planned real implementation
+        App->>Firebase: Register / verify identity
+        Firebase-->>App: Firebase ID token
+        App->>API: Authenticated consent and profile request
+        API->>Firebase: Verify ID token
+        Firebase-->>API: Verified identity
+        API-->>App: Application user, roles, permissions
+    end

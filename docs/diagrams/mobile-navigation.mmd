@@ -1,0 +1,26 @@
+flowchart TD
+    Launch["Launch CareBridge"] --> Role{"Active role"}
+    Role -->|"Caregiver"| Home["Home / Caregiver dashboard"]
+    Role -->|"Parent"| Parent["Simplified parent home"]
+
+    subgraph CaregiverShell["Caregiver shell"]
+        Home <--> Medicines["Medicines"]
+        Home <--> Health["Health"]
+        Home <--> Documents["Documents"]
+        Home <--> More["More"]
+        More --> Emergency["Emergency contacts (UX-009)"]
+        More --> Appointments["Appointments (UX-011)"]
+        More --> Settings["Language, text size, theme"]
+        More --> Design["Development design system"]
+    end
+
+    Home -->|"Switch care profile"| Home
+    Home -->|"Enter parent mode"| Parent
+    Parent --> ParentMedicine["My medicines"]
+    Parent --> ParentVitals["Log vitals"]
+    Parent --> Call["Call caregiver"]
+    Parent --> Help["Need help"]
+    Parent -->|"Back to caregiver mode"| Home
+
+    ParentGuard{"Parent opens caregiver route"} --> Parent
+    CaregiverGuard{"Caregiver opens /parent"} --> Home
