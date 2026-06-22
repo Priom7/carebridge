@@ -1,0 +1,28 @@
+sequenceDiagram
+    autonumber
+    participant Engine as Reminder engine
+    participant Parent as Parent device
+    participant API as CareBridge API
+    actor Caregiver
+    participant Local as Local contact
+
+    Engine->>Parent: Local + privacy-safe push reminder
+    Parent-->>Engine: No response during grace period
+    Engine->>API: Mark reminder Missed
+    API-->>Caregiver: Care alert needs attention
+    Caregiver->>API: Ring now
+    API->>API: Rate-limit + authorize request
+    API->>Parent: Remote alarm push
+    Parent-->>API: Delivered / opened / actioned / failed
+    API-->>Caregiver: Live delivery tracking
+
+    alt Parent responds
+        Parent->>API: Taken / Need Help
+        API-->>Caregiver: Updated event state
+        Caregiver->>API: Resolve
+    else Delivery uncertain or failed
+        Caregiver->>Parent: Phone call
+        Caregiver->>Local: Notify trusted local contact
+        Local-->>Caregiver: Situation update
+        Caregiver->>API: Resolve with note
+    end

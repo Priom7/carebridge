@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/settings/app_settings.dart';
 import '../../../core/theme/carebridge_tokens.dart';
@@ -85,7 +86,7 @@ class ParentHomePage extends StatelessWidget {
               large: true,
               label: l10n.myMedicines,
               icon: Icons.medication_outlined,
-              onPressed: () {},
+              onPressed: () => context.push('/reminders/current'),
             ),
             const SizedBox(height: CareSpacing.md),
             CareButton(
@@ -113,7 +114,7 @@ class ParentHomePage extends StatelessWidget {
               label: l10n.needHelp,
               icon: Icons.sos,
               style: CareButtonStyle.danger,
-              onPressed: () {},
+              onPressed: () => context.push('/reminders/current'),
             ),
           ],
         ),

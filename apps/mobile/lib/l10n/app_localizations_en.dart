@@ -514,4 +514,513 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get memberRemovedActivity => 'Member access removed';
+
+  @override
+  String get careProfiles => 'Care profiles';
+
+  @override
+  String get addCareProfile => 'Add care profile';
+
+  @override
+  String get editCareProfile => 'Edit care profile';
+
+  @override
+  String get archiveProfile => 'Archive profile';
+
+  @override
+  String get archiveProfileWarning =>
+      'This profile will be hidden from active care. Its history will remain available.';
+
+  @override
+  String get activeProfiles => 'Active profiles';
+
+  @override
+  String get archivedProfiles => 'Archived profiles';
+
+  @override
+  String get noActiveProfiles => 'No active care profiles';
+
+  @override
+  String get profilePhoto => 'Profile photo';
+
+  @override
+  String get addPhoto => 'Add photo';
+
+  @override
+  String get preferredName => 'Preferred name';
+
+  @override
+  String get relationship => 'Relationship';
+
+  @override
+  String get dateOfBirth => 'Date of birth';
+
+  @override
+  String get gender => 'Gender';
+
+  @override
+  String get male => 'Male';
+
+  @override
+  String get female => 'Female';
+
+  @override
+  String get other => 'Other';
+
+  @override
+  String get bloodGroup => 'Blood group';
+
+  @override
+  String get address => 'Address';
+
+  @override
+  String get city => 'City';
+
+  @override
+  String get country => 'Country';
+
+  @override
+  String get timezone => 'Timezone';
+
+  @override
+  String get preferredLanguage => 'Preferred language';
+
+  @override
+  String get medicalConditions => 'Medical conditions';
+
+  @override
+  String get allergies => 'Allergies';
+
+  @override
+  String get mobilityNotes => 'Mobility notes';
+
+  @override
+  String get doctorNotes => 'Doctor notes';
+
+  @override
+  String get emergencyInstructions => 'Emergency instructions';
+
+  @override
+  String get primaryCaregiver => 'Primary caregiver';
+
+  @override
+  String get secondaryCaregiverLabel => 'Secondary caregiver';
+
+  @override
+  String get saveProfile => 'Save profile';
+
+  @override
+  String get profileSaved => 'Care profile saved';
+
+  @override
+  String get profileArchived => 'Care profile archived';
+
+  @override
+  String get contactAndLocation => 'Contact and location';
+
+  @override
+  String get healthAndSafety => 'Health and safety';
+
+  @override
+  String get careTeam => 'Care team';
+
+  @override
+  String dashboardFor(String name) {
+    return 'Care overview for $name';
+  }
+
+  @override
+  String get documentsThisWeek => 'Documents this week';
+
+  @override
+  String get nextAppointment => 'Next appointment';
+
+  @override
+  String get quickActions => 'Quick actions';
+
+  @override
+  String get addMedicine => 'Add medicine';
+
+  @override
+  String get uploadReport => 'Upload report';
+
+  @override
+  String get addEmergencyContact => 'Add emergency contact';
+
+  @override
+  String get viewTimeline => 'View timeline';
+
+  @override
+  String careProfileTimezone(String timezone) {
+    return 'Care time: $timezone';
+  }
+
+  @override
+  String get partialProfile => 'Some profile details still need attention';
+
+  @override
+  String get completeProfile => 'Complete profile';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get medicineName => 'Medicine name';
+
+  @override
+  String get genericName => 'Generic name';
+
+  @override
+  String get brandName => 'Brand name';
+
+  @override
+  String get strength => 'Strength';
+
+  @override
+  String get medicineForm => 'Form';
+
+  @override
+  String get dosage => 'Dosage';
+
+  @override
+  String get quantityPerDose => 'Quantity per dose';
+
+  @override
+  String get schedule => 'Schedule';
+
+  @override
+  String get frequency => 'Frequency';
+
+  @override
+  String get onceDaily => 'Once daily';
+
+  @override
+  String get twiceDaily => 'Twice daily';
+
+  @override
+  String get threeTimesDaily => 'Three times daily';
+
+  @override
+  String get fourTimesDaily => 'Four times daily';
+
+  @override
+  String get everyXHours => 'Every X hours';
+
+  @override
+  String get specificDays => 'Specific days';
+
+  @override
+  String get weekly => 'Weekly';
+
+  @override
+  String get monthly => 'Monthly';
+
+  @override
+  String get asNeeded => 'As needed';
+
+  @override
+  String get doseTimes => 'Dose times';
+
+  @override
+  String get addTime => 'Add time';
+
+  @override
+  String get daysOfWeek => 'Days of week';
+
+  @override
+  String get startDate => 'Start date';
+
+  @override
+  String get endDate => 'End date';
+
+  @override
+  String get longTermMedicine => 'Long-term medicine';
+
+  @override
+  String get foodInstruction => 'Food instruction';
+
+  @override
+  String get beforeFood => 'Before food';
+
+  @override
+  String get afterFood => 'After food';
+
+  @override
+  String get withFood => 'With food';
+
+  @override
+  String get emptyStomach => 'Empty stomach';
+
+  @override
+  String get prescriptionAndDoctor => 'Prescription and doctor';
+
+  @override
+  String get prescribedBy => 'Prescribed by';
+
+  @override
+  String get linkedDoctor => 'Linked doctor';
+
+  @override
+  String get linkedPrescription => 'Linked prescription';
+
+  @override
+  String get stockAndNotes => 'Stock and notes';
+
+  @override
+  String get stockCount => 'Stock count';
+
+  @override
+  String get lowStockThreshold => 'Low-stock threshold';
+
+  @override
+  String get medicineNotes => 'Medicine notes';
+
+  @override
+  String get sideEffectNotes => 'Side-effect notes';
+
+  @override
+  String get saveMedicine => 'Save medicine';
+
+  @override
+  String get editMedicine => 'Edit medicine';
+
+  @override
+  String get medicineDetails => 'Medicine details';
+
+  @override
+  String get lowStock => 'Low stock';
+
+  @override
+  String get completed => 'Completed';
+
+  @override
+  String get paused => 'Paused';
+
+  @override
+  String get stopped => 'Stopped';
+
+  @override
+  String get allMedicines => 'All';
+
+  @override
+  String get noMedicines => 'No medicines in this view';
+
+  @override
+  String tabletsLeft(int count) {
+    return '$count left';
+  }
+
+  @override
+  String get pauseMedicine => 'Pause medicine';
+
+  @override
+  String get resumeMedicine => 'Resume medicine';
+
+  @override
+  String get completeMedicine => 'Complete medicine';
+
+  @override
+  String get stopMedicine => 'Stop medicine';
+
+  @override
+  String get schedulePreview => 'Upcoming dose preview';
+
+  @override
+  String schedulePreviewBody(String timezone) {
+    return 'Reminders will use $timezone care-profile time.';
+  }
+
+  @override
+  String nextDosePreview(String date, String time) {
+    return 'Next: $date at $time';
+  }
+
+  @override
+  String get medicineSaved => 'Medicine saved';
+
+  @override
+  String get scheduleChangeWarning =>
+      'Changing this schedule will update future reminders after confirmation.';
+
+  @override
+  String get confirmSchedule => 'Confirm schedule';
+
+  @override
+  String get timeForMedicine => 'Time for your medicine';
+
+  @override
+  String get takenAction => 'I took it';
+
+  @override
+  String get snooze15 => 'Remind me in 15 minutes';
+
+  @override
+  String get skipDose => 'Skip this dose';
+
+  @override
+  String get needHelpAction => 'I need help';
+
+  @override
+  String get reminderHistory => 'Reminder history';
+
+  @override
+  String get scheduled => 'Scheduled';
+
+  @override
+  String get dueNow => 'Due now';
+
+  @override
+  String get takenStatus => 'Taken';
+
+  @override
+  String get snoozed => 'Snoozed';
+
+  @override
+  String get skipped => 'Skipped';
+
+  @override
+  String get missed => 'Missed';
+
+  @override
+  String get escalated => 'Escalated';
+
+  @override
+  String get resolved => 'Resolved';
+
+  @override
+  String get cancelled => 'Cancelled';
+
+  @override
+  String get queuedOffline =>
+      'Saved offline — this action will sync when connected.';
+
+  @override
+  String get offlineDemo => 'Demo offline mode';
+
+  @override
+  String get offlineDemoBody =>
+      'Actions are kept safely on this device until connection returns.';
+
+  @override
+  String get reminderPermissionHealth => 'Reminder readiness';
+
+  @override
+  String get notificationsAllowed => 'Notifications allowed';
+
+  @override
+  String get batteryGuidance => 'Battery and Focus settings can affect alarms.';
+
+  @override
+  String get deliveryLimitation =>
+      'CareBridge cannot guarantee alarm delivery. Call your caregiver or emergency contact if help is urgent.';
+
+  @override
+  String get noReminderDue => 'No medicine is due right now';
+
+  @override
+  String get viewReminderHistory => 'View reminder history';
+
+  @override
+  String get actionRecorded => 'Action recorded';
+
+  @override
+  String get helpRequested => 'Help request sent to your caregiver';
+
+  @override
+  String get filterStatus => 'Filter status';
+
+  @override
+  String get allStatuses => 'All statuses';
+
+  @override
+  String showingDemoRecords(int count) {
+    return 'Showing $count realistic local demo records';
+  }
+
+  @override
+  String demoDatasetSummary(int profiles, int medicines, int reminders) {
+    return 'Demo data: $profiles profiles · $medicines medicines · $reminders reminders';
+  }
+
+  @override
+  String get caregiverAlerts => 'Caregiver alerts';
+
+  @override
+  String get missedReminderAlert => 'Missed medicine reminder';
+
+  @override
+  String get remoteRing => 'Ring now';
+
+  @override
+  String get sendReminder => 'Send reminder';
+
+  @override
+  String get callParent => 'Call parent';
+
+  @override
+  String get notifyLocalContact => 'Notify local contact';
+
+  @override
+  String get resolveAlert => 'Resolve alert';
+
+  @override
+  String get alertResolved => 'Alert resolved';
+
+  @override
+  String get deliveryTracking => 'Delivery tracking';
+
+  @override
+  String get requested => 'Requested';
+
+  @override
+  String get sent => 'Sent';
+
+  @override
+  String get delivered => 'Delivered';
+
+  @override
+  String get opened => 'Opened';
+
+  @override
+  String get actioned => 'Actioned';
+
+  @override
+  String get failed => 'Failed';
+
+  @override
+  String parentLocalTime(String timezone, String time) {
+    return 'Parent time ($timezone): $time';
+  }
+
+  @override
+  String caregiverLocalTime(String time) {
+    return 'Your time (Europe/London): $time';
+  }
+
+  @override
+  String get remoteRingSent => 'Remote ring delivered to the parent device.';
+
+  @override
+  String get reminderSent => 'Reminder delivered to the parent device.';
+
+  @override
+  String get ringRateLimited => 'Please wait before sending another alarm.';
+
+  @override
+  String get remoteDeliveryWarning =>
+      'Remote ringing is not guaranteed. The phone may be offline, muted, low on battery, or restricted by the operating system.';
+
+  @override
+  String get fallbackActions => 'Fallback actions';
+
+  @override
+  String missedAt(String time) {
+    return 'Missed at $time';
+  }
+
+  @override
+  String get noCaregiverAlerts => 'No caregiver alerts need attention';
+
+  @override
+  String get alarmRequestHistory => 'Alarm request history';
 }

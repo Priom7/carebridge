@@ -1063,6 +1063,972 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Member access removed'**
   String get memberRemovedActivity;
+
+  /// No description provided for @careProfiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Care profiles'**
+  String get careProfiles;
+
+  /// No description provided for @addCareProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Add care profile'**
+  String get addCareProfile;
+
+  /// No description provided for @editCareProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit care profile'**
+  String get editCareProfile;
+
+  /// No description provided for @archiveProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive profile'**
+  String get archiveProfile;
+
+  /// No description provided for @archiveProfileWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'This profile will be hidden from active care. Its history will remain available.'**
+  String get archiveProfileWarning;
+
+  /// No description provided for @activeProfiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Active profiles'**
+  String get activeProfiles;
+
+  /// No description provided for @archivedProfiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived profiles'**
+  String get archivedProfiles;
+
+  /// No description provided for @noActiveProfiles.
+  ///
+  /// In en, this message translates to:
+  /// **'No active care profiles'**
+  String get noActiveProfiles;
+
+  /// No description provided for @profilePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile photo'**
+  String get profilePhoto;
+
+  /// No description provided for @addPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Add photo'**
+  String get addPhoto;
+
+  /// No description provided for @preferredName.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferred name'**
+  String get preferredName;
+
+  /// No description provided for @relationship.
+  ///
+  /// In en, this message translates to:
+  /// **'Relationship'**
+  String get relationship;
+
+  /// No description provided for @dateOfBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'Date of birth'**
+  String get dateOfBirth;
+
+  /// No description provided for @gender.
+  ///
+  /// In en, this message translates to:
+  /// **'Gender'**
+  String get gender;
+
+  /// No description provided for @male.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get male;
+
+  /// No description provided for @female.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get female;
+
+  /// No description provided for @other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get other;
+
+  /// No description provided for @bloodGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Blood group'**
+  String get bloodGroup;
+
+  /// No description provided for @address.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get address;
+
+  /// No description provided for @city.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get city;
+
+  /// No description provided for @country.
+  ///
+  /// In en, this message translates to:
+  /// **'Country'**
+  String get country;
+
+  /// No description provided for @timezone.
+  ///
+  /// In en, this message translates to:
+  /// **'Timezone'**
+  String get timezone;
+
+  /// No description provided for @preferredLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferred language'**
+  String get preferredLanguage;
+
+  /// No description provided for @medicalConditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Medical conditions'**
+  String get medicalConditions;
+
+  /// No description provided for @allergies.
+  ///
+  /// In en, this message translates to:
+  /// **'Allergies'**
+  String get allergies;
+
+  /// No description provided for @mobilityNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobility notes'**
+  String get mobilityNotes;
+
+  /// No description provided for @doctorNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Doctor notes'**
+  String get doctorNotes;
+
+  /// No description provided for @emergencyInstructions.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency instructions'**
+  String get emergencyInstructions;
+
+  /// No description provided for @primaryCaregiver.
+  ///
+  /// In en, this message translates to:
+  /// **'Primary caregiver'**
+  String get primaryCaregiver;
+
+  /// No description provided for @secondaryCaregiverLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Secondary caregiver'**
+  String get secondaryCaregiverLabel;
+
+  /// No description provided for @saveProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Save profile'**
+  String get saveProfile;
+
+  /// No description provided for @profileSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Care profile saved'**
+  String get profileSaved;
+
+  /// No description provided for @profileArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Care profile archived'**
+  String get profileArchived;
+
+  /// No description provided for @contactAndLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact and location'**
+  String get contactAndLocation;
+
+  /// No description provided for @healthAndSafety.
+  ///
+  /// In en, this message translates to:
+  /// **'Health and safety'**
+  String get healthAndSafety;
+
+  /// No description provided for @careTeam.
+  ///
+  /// In en, this message translates to:
+  /// **'Care team'**
+  String get careTeam;
+
+  /// No description provided for @dashboardFor.
+  ///
+  /// In en, this message translates to:
+  /// **'Care overview for {name}'**
+  String dashboardFor(String name);
+
+  /// No description provided for @documentsThisWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents this week'**
+  String get documentsThisWeek;
+
+  /// No description provided for @nextAppointment.
+  ///
+  /// In en, this message translates to:
+  /// **'Next appointment'**
+  String get nextAppointment;
+
+  /// No description provided for @quickActions.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick actions'**
+  String get quickActions;
+
+  /// No description provided for @addMedicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Add medicine'**
+  String get addMedicine;
+
+  /// No description provided for @uploadReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload report'**
+  String get uploadReport;
+
+  /// No description provided for @addEmergencyContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Add emergency contact'**
+  String get addEmergencyContact;
+
+  /// No description provided for @viewTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'View timeline'**
+  String get viewTimeline;
+
+  /// No description provided for @careProfileTimezone.
+  ///
+  /// In en, this message translates to:
+  /// **'Care time: {timezone}'**
+  String careProfileTimezone(String timezone);
+
+  /// No description provided for @partialProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Some profile details still need attention'**
+  String get partialProfile;
+
+  /// No description provided for @completeProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete profile'**
+  String get completeProfile;
+
+  /// No description provided for @active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get active;
+
+  /// No description provided for @medicineName.
+  ///
+  /// In en, this message translates to:
+  /// **'Medicine name'**
+  String get medicineName;
+
+  /// No description provided for @genericName.
+  ///
+  /// In en, this message translates to:
+  /// **'Generic name'**
+  String get genericName;
+
+  /// No description provided for @brandName.
+  ///
+  /// In en, this message translates to:
+  /// **'Brand name'**
+  String get brandName;
+
+  /// No description provided for @strength.
+  ///
+  /// In en, this message translates to:
+  /// **'Strength'**
+  String get strength;
+
+  /// No description provided for @medicineForm.
+  ///
+  /// In en, this message translates to:
+  /// **'Form'**
+  String get medicineForm;
+
+  /// No description provided for @dosage.
+  ///
+  /// In en, this message translates to:
+  /// **'Dosage'**
+  String get dosage;
+
+  /// No description provided for @quantityPerDose.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity per dose'**
+  String get quantityPerDose;
+
+  /// No description provided for @schedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule'**
+  String get schedule;
+
+  /// No description provided for @frequency.
+  ///
+  /// In en, this message translates to:
+  /// **'Frequency'**
+  String get frequency;
+
+  /// No description provided for @onceDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Once daily'**
+  String get onceDaily;
+
+  /// No description provided for @twiceDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Twice daily'**
+  String get twiceDaily;
+
+  /// No description provided for @threeTimesDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Three times daily'**
+  String get threeTimesDaily;
+
+  /// No description provided for @fourTimesDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Four times daily'**
+  String get fourTimesDaily;
+
+  /// No description provided for @everyXHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Every X hours'**
+  String get everyXHours;
+
+  /// No description provided for @specificDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Specific days'**
+  String get specificDays;
+
+  /// No description provided for @weekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get weekly;
+
+  /// No description provided for @monthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get monthly;
+
+  /// No description provided for @asNeeded.
+  ///
+  /// In en, this message translates to:
+  /// **'As needed'**
+  String get asNeeded;
+
+  /// No description provided for @doseTimes.
+  ///
+  /// In en, this message translates to:
+  /// **'Dose times'**
+  String get doseTimes;
+
+  /// No description provided for @addTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Add time'**
+  String get addTime;
+
+  /// No description provided for @daysOfWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Days of week'**
+  String get daysOfWeek;
+
+  /// No description provided for @startDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Start date'**
+  String get startDate;
+
+  /// No description provided for @endDate.
+  ///
+  /// In en, this message translates to:
+  /// **'End date'**
+  String get endDate;
+
+  /// No description provided for @longTermMedicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Long-term medicine'**
+  String get longTermMedicine;
+
+  /// No description provided for @foodInstruction.
+  ///
+  /// In en, this message translates to:
+  /// **'Food instruction'**
+  String get foodInstruction;
+
+  /// No description provided for @beforeFood.
+  ///
+  /// In en, this message translates to:
+  /// **'Before food'**
+  String get beforeFood;
+
+  /// No description provided for @afterFood.
+  ///
+  /// In en, this message translates to:
+  /// **'After food'**
+  String get afterFood;
+
+  /// No description provided for @withFood.
+  ///
+  /// In en, this message translates to:
+  /// **'With food'**
+  String get withFood;
+
+  /// No description provided for @emptyStomach.
+  ///
+  /// In en, this message translates to:
+  /// **'Empty stomach'**
+  String get emptyStomach;
+
+  /// No description provided for @prescriptionAndDoctor.
+  ///
+  /// In en, this message translates to:
+  /// **'Prescription and doctor'**
+  String get prescriptionAndDoctor;
+
+  /// No description provided for @prescribedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Prescribed by'**
+  String get prescribedBy;
+
+  /// No description provided for @linkedDoctor.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked doctor'**
+  String get linkedDoctor;
+
+  /// No description provided for @linkedPrescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked prescription'**
+  String get linkedPrescription;
+
+  /// No description provided for @stockAndNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock and notes'**
+  String get stockAndNotes;
+
+  /// No description provided for @stockCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock count'**
+  String get stockCount;
+
+  /// No description provided for @lowStockThreshold.
+  ///
+  /// In en, this message translates to:
+  /// **'Low-stock threshold'**
+  String get lowStockThreshold;
+
+  /// No description provided for @medicineNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Medicine notes'**
+  String get medicineNotes;
+
+  /// No description provided for @sideEffectNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Side-effect notes'**
+  String get sideEffectNotes;
+
+  /// No description provided for @saveMedicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Save medicine'**
+  String get saveMedicine;
+
+  /// No description provided for @editMedicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit medicine'**
+  String get editMedicine;
+
+  /// No description provided for @medicineDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Medicine details'**
+  String get medicineDetails;
+
+  /// No description provided for @lowStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Low stock'**
+  String get lowStock;
+
+  /// No description provided for @completed.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get completed;
+
+  /// No description provided for @paused.
+  ///
+  /// In en, this message translates to:
+  /// **'Paused'**
+  String get paused;
+
+  /// No description provided for @stopped.
+  ///
+  /// In en, this message translates to:
+  /// **'Stopped'**
+  String get stopped;
+
+  /// No description provided for @allMedicines.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get allMedicines;
+
+  /// No description provided for @noMedicines.
+  ///
+  /// In en, this message translates to:
+  /// **'No medicines in this view'**
+  String get noMedicines;
+
+  /// No description provided for @tabletsLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} left'**
+  String tabletsLeft(int count);
+
+  /// No description provided for @pauseMedicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause medicine'**
+  String get pauseMedicine;
+
+  /// No description provided for @resumeMedicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume medicine'**
+  String get resumeMedicine;
+
+  /// No description provided for @completeMedicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete medicine'**
+  String get completeMedicine;
+
+  /// No description provided for @stopMedicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop medicine'**
+  String get stopMedicine;
+
+  /// No description provided for @schedulePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming dose preview'**
+  String get schedulePreview;
+
+  /// No description provided for @schedulePreviewBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders will use {timezone} care-profile time.'**
+  String schedulePreviewBody(String timezone);
+
+  /// No description provided for @nextDosePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Next: {date} at {time}'**
+  String nextDosePreview(String date, String time);
+
+  /// No description provided for @medicineSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Medicine saved'**
+  String get medicineSaved;
+
+  /// No description provided for @scheduleChangeWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Changing this schedule will update future reminders after confirmation.'**
+  String get scheduleChangeWarning;
+
+  /// No description provided for @confirmSchedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm schedule'**
+  String get confirmSchedule;
+
+  /// No description provided for @timeForMedicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Time for your medicine'**
+  String get timeForMedicine;
+
+  /// No description provided for @takenAction.
+  ///
+  /// In en, this message translates to:
+  /// **'I took it'**
+  String get takenAction;
+
+  /// No description provided for @snooze15.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind me in 15 minutes'**
+  String get snooze15;
+
+  /// No description provided for @skipDose.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip this dose'**
+  String get skipDose;
+
+  /// No description provided for @needHelpAction.
+  ///
+  /// In en, this message translates to:
+  /// **'I need help'**
+  String get needHelpAction;
+
+  /// No description provided for @reminderHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder history'**
+  String get reminderHistory;
+
+  /// No description provided for @scheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Scheduled'**
+  String get scheduled;
+
+  /// No description provided for @dueNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Due now'**
+  String get dueNow;
+
+  /// No description provided for @takenStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Taken'**
+  String get takenStatus;
+
+  /// No description provided for @snoozed.
+  ///
+  /// In en, this message translates to:
+  /// **'Snoozed'**
+  String get snoozed;
+
+  /// No description provided for @skipped.
+  ///
+  /// In en, this message translates to:
+  /// **'Skipped'**
+  String get skipped;
+
+  /// No description provided for @missed.
+  ///
+  /// In en, this message translates to:
+  /// **'Missed'**
+  String get missed;
+
+  /// No description provided for @escalated.
+  ///
+  /// In en, this message translates to:
+  /// **'Escalated'**
+  String get escalated;
+
+  /// No description provided for @resolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get resolved;
+
+  /// No description provided for @cancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get cancelled;
+
+  /// No description provided for @queuedOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved offline — this action will sync when connected.'**
+  String get queuedOffline;
+
+  /// No description provided for @offlineDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo offline mode'**
+  String get offlineDemo;
+
+  /// No description provided for @offlineDemoBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Actions are kept safely on this device until connection returns.'**
+  String get offlineDemoBody;
+
+  /// No description provided for @reminderPermissionHealth.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder readiness'**
+  String get reminderPermissionHealth;
+
+  /// No description provided for @notificationsAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications allowed'**
+  String get notificationsAllowed;
+
+  /// No description provided for @batteryGuidance.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery and Focus settings can affect alarms.'**
+  String get batteryGuidance;
+
+  /// No description provided for @deliveryLimitation.
+  ///
+  /// In en, this message translates to:
+  /// **'CareBridge cannot guarantee alarm delivery. Call your caregiver or emergency contact if help is urgent.'**
+  String get deliveryLimitation;
+
+  /// No description provided for @noReminderDue.
+  ///
+  /// In en, this message translates to:
+  /// **'No medicine is due right now'**
+  String get noReminderDue;
+
+  /// No description provided for @viewReminderHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'View reminder history'**
+  String get viewReminderHistory;
+
+  /// No description provided for @actionRecorded.
+  ///
+  /// In en, this message translates to:
+  /// **'Action recorded'**
+  String get actionRecorded;
+
+  /// No description provided for @helpRequested.
+  ///
+  /// In en, this message translates to:
+  /// **'Help request sent to your caregiver'**
+  String get helpRequested;
+
+  /// No description provided for @filterStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter status'**
+  String get filterStatus;
+
+  /// No description provided for @allStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get allStatuses;
+
+  /// No description provided for @showingDemoRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'Showing {count} realistic local demo records'**
+  String showingDemoRecords(int count);
+
+  /// No description provided for @demoDatasetSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo data: {profiles} profiles · {medicines} medicines · {reminders} reminders'**
+  String demoDatasetSummary(int profiles, int medicines, int reminders);
+
+  /// No description provided for @caregiverAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Caregiver alerts'**
+  String get caregiverAlerts;
+
+  /// No description provided for @missedReminderAlert.
+  ///
+  /// In en, this message translates to:
+  /// **'Missed medicine reminder'**
+  String get missedReminderAlert;
+
+  /// No description provided for @remoteRing.
+  ///
+  /// In en, this message translates to:
+  /// **'Ring now'**
+  String get remoteRing;
+
+  /// No description provided for @sendReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Send reminder'**
+  String get sendReminder;
+
+  /// No description provided for @callParent.
+  ///
+  /// In en, this message translates to:
+  /// **'Call parent'**
+  String get callParent;
+
+  /// No description provided for @notifyLocalContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Notify local contact'**
+  String get notifyLocalContact;
+
+  /// No description provided for @resolveAlert.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolve alert'**
+  String get resolveAlert;
+
+  /// No description provided for @alertResolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Alert resolved'**
+  String get alertResolved;
+
+  /// No description provided for @deliveryTracking.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery tracking'**
+  String get deliveryTracking;
+
+  /// No description provided for @requested.
+  ///
+  /// In en, this message translates to:
+  /// **'Requested'**
+  String get requested;
+
+  /// No description provided for @sent.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent'**
+  String get sent;
+
+  /// No description provided for @delivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered'**
+  String get delivered;
+
+  /// No description provided for @opened.
+  ///
+  /// In en, this message translates to:
+  /// **'Opened'**
+  String get opened;
+
+  /// No description provided for @actioned.
+  ///
+  /// In en, this message translates to:
+  /// **'Actioned'**
+  String get actioned;
+
+  /// No description provided for @failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed'**
+  String get failed;
+
+  /// No description provided for @parentLocalTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent time ({timezone}): {time}'**
+  String parentLocalTime(String timezone, String time);
+
+  /// No description provided for @caregiverLocalTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Your time (Europe/London): {time}'**
+  String caregiverLocalTime(String time);
+
+  /// No description provided for @remoteRingSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Remote ring delivered to the parent device.'**
+  String get remoteRingSent;
+
+  /// No description provided for @reminderSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder delivered to the parent device.'**
+  String get reminderSent;
+
+  /// No description provided for @ringRateLimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Please wait before sending another alarm.'**
+  String get ringRateLimited;
+
+  /// No description provided for @remoteDeliveryWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Remote ringing is not guaranteed. The phone may be offline, muted, low on battery, or restricted by the operating system.'**
+  String get remoteDeliveryWarning;
+
+  /// No description provided for @fallbackActions.
+  ///
+  /// In en, this message translates to:
+  /// **'Fallback actions'**
+  String get fallbackActions;
+
+  /// No description provided for @missedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Missed at {time}'**
+  String missedAt(String time);
+
+  /// No description provided for @noCaregiverAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'No caregiver alerts need attention'**
+  String get noCaregiverAlerts;
+
+  /// No description provided for @alarmRequestHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Alarm request history'**
+  String get alarmRequestHistory;
 }
 
 class _AppLocalizationsDelegate

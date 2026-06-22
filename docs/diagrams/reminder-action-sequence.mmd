@@ -1,0 +1,26 @@
+sequenceDiagram
+    autonumber
+    actor Parent
+    participant App as Flutter parent mode
+    participant Outbox as Local offline outbox
+    participant API as Next.js reminder API (BE-007)
+    participant Caregiver as Caregiver device
+
+    App-->>Parent: Full-screen medicine reminder
+    alt Taken / Snooze / Skip while online
+        Parent->>App: Select action
+        App->>API: Idempotent reminder action
+        API-->>App: Authoritative event state
+        App-->>Parent: Action recorded
+    else Action while offline
+        Parent->>App: Select action
+        App->>Outbox: Store action + idempotency key
+        App-->>Parent: Saved offline, will sync
+        Outbox->>API: Replay after reconnect
+        API-->>Outbox: Accepted/already applied
+    else Need Help
+        Parent->>App: I need help
+        App->>API: Escalate immediately
+        API-->>Caregiver: Privacy-safe urgent notification
+        App-->>Parent: Help request sent
+    end

@@ -8,7 +8,7 @@
 | Source | `PRD.md` (all 1,964 lines reviewed) |
 | Plan version | 1.0.0 |
 | Created | 2026-06-21T14:47:04+01:00 |
-| Last updated | 2026-06-21T16:37:51+01:00 |
+| Last updated | 2026-06-21T22:23:27+01:00 |
 | Mobile decision | Flutter/Dart for iOS and Android |
 | Backend decision | Next.js with TypeScript, App Router route handlers, and background worker entrypoint |
 | File storage decision | Firebase Cloud Storage; Firebase Storage Emulator locally |
@@ -65,6 +65,7 @@ Every task must satisfy all relevant items:
 - User journey, architecture/flow diagrams, API/OpenAPI, operational notes, and user manual are updated when affected.
 - Demo evidence is recorded in the task entry.
 - A task may use mocks during the UI phase, but the mock contract must be deterministic and match the planned API schema.
+- Every implemented list-heavy domain must include 30–50 deterministic, realistic local fixture records for demos, filtering, pagination preparation, and tests; fixtures must contain fictional data only.
 
 ## 4. Architecture baseline
 
@@ -147,10 +148,10 @@ Backend feature work must not begin before G2. Planning, contract design, docume
 | UX-002 | Navigation, roles, mode switching, localization, and accessibility | DONE | 2026-06-21T15:08:04+01:00 | 2026-06-21T15:08:04+01:00 | 2026-06-21T15:16:30+01:00 | 3d | G1 |
 | UX-003 | Authentication, consent, recovery, and account UI | DONE | 2026-06-21T15:17:40+01:00 | 2026-06-21T15:17:40+01:00 | 2026-06-21T15:32:14+01:00 | 3d | G1 |
 | UX-004 | Onboarding, family group, invitations, and permissions UI | DONE | 2026-06-21T16:26:59+01:00 | 2026-06-21T16:26:59+01:00 | 2026-06-21T16:37:51+01:00 | 4d | G1 |
-| UX-005 | Care profiles and caregiver dashboard UI | NOT_STARTED | — | — | — | 4d | G1 |
-| UX-006 | Medicine management and schedule builder UI | NOT_STARTED | — | — | — | 5d | G2 |
-| UX-007 | Parent reminder, local alarm, and adherence history UI | NOT_STARTED | — | — | — | 5d | G2 |
-| UX-008 | Caregiver missed-reminder and remote-ring UI | NOT_STARTED | — | — | — | 3d | G2 |
+| UX-005 | Care profiles and caregiver dashboard UI | DONE | 2026-06-21T21:35:09+01:00 | 2026-06-21T21:35:09+01:00 | 2026-06-21T21:45:15+01:00 | 4d | G1 |
+| UX-006 | Medicine management and schedule builder UI | DONE | 2026-06-21T21:47:03+01:00 | 2026-06-21T21:47:03+01:00 | 2026-06-21T21:56:48+01:00 | 5d | G2 |
+| UX-007 | Parent reminder, local alarm, and adherence history UI | DONE | 2026-06-21T21:58:42+01:00 | 2026-06-21T21:58:42+01:00 | 2026-06-21T22:06:58+01:00 | 5d | G2 |
+| UX-008 | Caregiver missed-reminder and remote-ring UI | DONE | 2026-06-21T22:16:28+01:00 | 2026-06-21T22:16:28+01:00 | 2026-06-21T22:23:27+01:00 | 3d | G2 |
 | UX-009 | Emergency contacts and escalation UI | NOT_STARTED | — | — | — | 5d | G2 |
 | UX-010 | Document vault and secure viewer UI | NOT_STARTED | — | — | — | 4d | G2 |
 | UX-011 | Doctors, appointments, and visit workflow UI | NOT_STARTED | — | — | — | 4d | G2 |
@@ -303,13 +304,37 @@ Progress log:
 
 ### UX-005 — Care profiles and caregiver dashboard UI
 
+Status: DONE  
+Started at: 2026-06-21T21:35:09+01:00  
+In-progress at: 2026-06-21T21:35:09+01:00  
+Done at: 2026-06-21T21:45:15+01:00  
+Estimate: 4 engineering days  
+Depends on: UX-004
+
 Demo: Create/edit/archive a care profile, switch between father and mother, and use a dashboard showing medicines, misses, appointment, documents, emergency contacts, and quick actions.
 
 Acceptance: All PRD profile fields are represented; dashboard loads under the perceived-performance target with skeletons; empty/populated/partial/error states work; timezone and language are visible and editable.
 
 Documentation: `docs/user-journeys/care-profile.md`, `docs/user-journeys/caregiver-dashboard.md`, `docs/diagrams/dashboard-data-flow.mmd`, `docs/user-manual/profiles-and-dashboard.md`.
 
+Evidence: `flutter analyze` passed; eleven widget workflows passed; web and signed iOS release builds succeeded; UX-005 was installed and remained running on the connected iPhone as PID 22380.
+
+Progress log:
+
+- 2026-06-21T21:35:09+01:00 — Started UX-005 and added the complete care-profile domain fixture with active/archive lifecycle.
+- 2026-06-21T21:39:00+01:00 — Implemented localized create/edit/archive forms covering identity, contact, location, timezone, language, health, safety, and care-team fields.
+- 2026-06-21T21:41:00+01:00 — Replaced the static dashboard with selected-profile identity, care timezone, metrics, appointment, quick actions, partial, and empty states.
+- 2026-06-21T21:43:00+01:00 — Completed profile switch, create, validation, and archive workflow tests and all regression tests.
+- 2026-06-21T21:45:15+01:00 — Analysis, eleven tests, web/iOS release builds, documentation, and physical iPhone installation/launch verification completed.
+
 ### UX-006 — Medicine management and schedule builder UI
+
+Status: DONE  
+Started at: 2026-06-21T21:47:03+01:00  
+In-progress at: 2026-06-21T21:47:03+01:00  
+Done at: 2026-06-21T21:56:48+01:00  
+Estimate: 5 engineering days  
+Depends on: UX-005
 
 Demo: Add a temporary course and a long-term medicine, link a prescription, configure complex times/days/food instructions/timezone, edit/pause/complete it, and manage stock/low-stock settings.
 
@@ -317,7 +342,24 @@ Acceptance: Every medicine field, form, frequency, and status in the PRD is hand
 
 Documentation: `docs/user-journeys/add-and-manage-medicine.md`, `docs/diagrams/medicine-lifecycle.mmd`, `docs/diagrams/schedule-builder-flow.mmd`, `docs/user-manual/medicines.md`.
 
+Evidence: `flutter analyze` passed; thirteen widget workflows passed; web and signed iOS release builds succeeded; UX-006 was installed and remained running on the connected iPhone as PID 22462.
+
+Progress log:
+
+- 2026-06-21T21:47:03+01:00 — Started UX-006 and added profile-scoped medicine, schedule, frequency, and lifecycle fixture models.
+- 2026-06-21T21:50:00+01:00 — Implemented localized medicine list, All/Active/Low stock/Completed filters, cards, detail, and lifecycle actions.
+- 2026-06-21T21:53:00+01:00 — Implemented full identity, dosage, schedule, days/times, timezone preview, prescription, stock, and notes form.
+- 2026-06-21T21:55:00+01:00 — Completed profile isolation, low-stock, create schedule, timezone, pause, and completion workflow tests.
+- 2026-06-21T21:56:48+01:00 — Analysis, thirteen tests, web/iOS release builds, documentation, and physical iPhone installation/launch verification completed.
+
 ### UX-007 — Parent reminder, local alarm, and adherence history UI
+
+Status: DONE  
+Started at: 2026-06-21T21:58:42+01:00  
+In-progress at: 2026-06-21T21:58:42+01:00  
+Done at: 2026-06-21T22:06:58+01:00  
+Estimate: 5 engineering days  
+Depends on: UX-006
 
 Demo: Parent receives a full-screen reminder and completes Taken, Snooze, Skip, and Need Help paths; caregiver/parent can then inspect the event history.
 
@@ -325,13 +367,41 @@ Acceptance: Controls are elderly-friendly; duplicate taps are safe; offline acti
 
 Documentation: `docs/user-journeys/respond-to-reminder.md`, `docs/diagrams/reminder-state-machine.mmd`, `docs/diagrams/reminder-action-sequence.mmd`, `docs/user-manual/parent-reminders.md`.
 
+Evidence: `flutter analyze` passed; sixteen automated workflows passed; 32 profiles, 30 family members, 30 invitations, 50 medicines, and 50 reminder events satisfy the fixture-scale contract; web and signed iOS release builds succeeded; UX-007 remained running on the connected iPhone as PID 22565.
+
+Progress log:
+
+- 2026-06-21T21:58:42+01:00 — Started UX-007 and added the permanent 30–50 deterministic fixture rule to Definition of Done.
+- 2026-06-21T22:01:00+01:00 — Expanded local demo data to 32 profiles, 30 members, 30 invitations, 50 medicines, and 50 reminder events.
+- 2026-06-21T22:03:00+01:00 — Implemented parent Taken/Snooze/Skip/Need Help actions, offline queuing, readiness/limitations, and no-reminder state.
+- 2026-06-21T22:05:00+01:00 — Implemented profile-scoped filterable adherence history and fixture-bound regression tests.
+- 2026-06-21T22:06:58+01:00 — Analysis, sixteen tests, web/iOS release builds, documentation, and physical iPhone installation/launch verification completed.
+- 2026-06-21T22:14:38+01:00 — Corrected the real sign-in fixture-seeding path, added a visible dataset-count indicator, passed seventeen tests, and reinstalled/launched the corrected physical-device release as PID 22577.
+
 ### UX-008 — Caregiver missed-reminder and remote-ring UI
+
+Status: DONE  
+Started at: 2026-06-21T22:16:28+01:00  
+In-progress at: 2026-06-21T22:16:28+01:00  
+Done at: 2026-06-21T22:23:27+01:00  
+Estimate: 3 engineering days  
+Depends on: UX-007
 
 Demo: A reminder ages from due to missed, the caregiver receives an alert, sends Ring Now, calls the parent, sees delivery/open/action status, and resolves the event.
 
 Acceptance: The app states that delivery is not guaranteed; fallback call/contact actions are always available; status timestamps are readable across both user timezones; repeated remote requests are rate-limited in the UI.
 
 Documentation: `docs/user-journeys/missed-medicine.md`, `docs/diagrams/missed-reminder-escalation.mmd`, `docs/user-manual/remote-reminders.md`.
+
+Evidence: `flutter analyze` passed; nineteen automated workflows passed; 40 remote alarm-request fixtures cover all delivery states; web and signed iOS release builds succeeded; UX-008 remained running on the connected iPhone as PID 22614.
+
+Progress log:
+
+- 2026-06-21T22:16:28+01:00 — Started UX-008 and added the remote alarm request/delivery domain model.
+- 2026-06-21T22:18:00+01:00 — Added 40 deterministic alarm requests spanning requested, sent, delivered, opened, actioned, and failed states.
+- 2026-06-21T22:20:00+01:00 — Implemented caregiver missed-alert inbox, timezone comparison, delivery tracking, remote ring/reminder, rate limiting, fallbacks, and resolution.
+- 2026-06-21T22:21:30+01:00 — Completed remote-ring delivery, immediate repeat limit, fixture-count, and resolution workflow tests.
+- 2026-06-21T22:23:27+01:00 — Analysis, nineteen tests, web/iOS release builds, documentation, and physical iPhone installation/launch verification completed.
 
 ### UX-009 — Emergency contacts and escalation UI
 

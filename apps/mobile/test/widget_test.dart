@@ -9,10 +9,10 @@ void main() {
     await tester.pumpWidget(const CareBridgeApp(initiallyAuthenticated: true));
     await tester.pumpAndSettle();
 
-    expect(find.text('Good morning, Sharif'), findsOneWidget);
+    expect(find.text('Care overview for Father'), findsOneWidget);
     await tester.tap(find.text('Medicines'));
     await tester.pumpAndSettle();
-    expect(find.text('Medicine library'), findsOneWidget);
+    expect(find.text('Metformin 500mg'), findsOneWidget);
 
     await tester.tap(find.text('Health'));
     await tester.pumpAndSettle();
@@ -165,7 +165,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('onboarding-next')));
     await tester.pumpAndSettle();
-    expect(find.text('Good morning, Sharif'), findsOneWidget);
+    expect(find.text('Care overview for Father'), findsOneWidget);
   });
 
   testWidgets('password recovery remains account-enumeration safe', (

@@ -1,0 +1,20 @@
+flowchart LR
+    Switcher["Active profile switcher"] --> Selection["Selected profile ID"]
+    Selection --> Repository["Care profile repository interface"]
+    Repository --> Cache["Local profile/dashboard cache"]
+    Repository --> API["Next.js profile/dashboard API (BE-005)"]
+    Cache --> State["Profile-scoped UI state"]
+    API --> State
+
+    State --> Header["Name + care timezone"]
+    State --> Metrics["Medicines / missed / documents"]
+    State --> Appointment["Next appointment"]
+    State --> Actions["Profile-scoped quick actions"]
+    State --> Completeness{"Critical profile fields complete?"}
+    Completeness -->|"No"| Banner["Complete profile banner"]
+    Completeness -->|"Yes"| Status["Daily care status"]
+
+    Archive["Archive selected profile"] --> Repository
+    Archive --> Next{"Another active profile?"}
+    Next -->|"Yes"| Selection
+    Next -->|"No"| Empty["Empty dashboard + Add profile"]

@@ -28,9 +28,21 @@ class MorePage extends StatelessWidget {
           onTap: () => context.push('/family'),
         ),
         ListTile(
+          leading: const Icon(Icons.people_outline),
+          title: Text(l10n.careProfiles),
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => context.push('/profiles'),
+        ),
+        ListTile(
           leading: const Icon(Icons.contact_phone_outlined),
           title: Text(l10n.emergencyContacts),
           trailing: const Icon(Icons.chevron_right),
+        ),
+        ListTile(
+          leading: const Icon(Icons.notifications_active_outlined),
+          title: Text(l10n.caregiverAlerts),
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => context.push('/caregiver-alerts'),
         ),
         ListTile(
           leading: const Icon(Icons.calendar_month_outlined),

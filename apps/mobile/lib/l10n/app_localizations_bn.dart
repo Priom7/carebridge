@@ -514,4 +514,514 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get memberRemovedActivity => 'সদস্যের প্রবেশাধিকার সরানো হয়েছে';
+
+  @override
+  String get careProfiles => 'যত্নের প্রোফাইল';
+
+  @override
+  String get addCareProfile => 'যত্নের প্রোফাইল যোগ করুন';
+
+  @override
+  String get editCareProfile => 'যত্নের প্রোফাইল সম্পাদনা';
+
+  @override
+  String get archiveProfile => 'প্রোফাইল আর্কাইভ করুন';
+
+  @override
+  String get archiveProfileWarning =>
+      'এই প্রোফাইলটি সক্রিয় যত্ন থেকে লুকানো হবে। ইতিহাস সংরক্ষিত থাকবে।';
+
+  @override
+  String get activeProfiles => 'সক্রিয় প্রোফাইল';
+
+  @override
+  String get archivedProfiles => 'আর্কাইভ করা প্রোফাইল';
+
+  @override
+  String get noActiveProfiles => 'কোনো সক্রিয় যত্নের প্রোফাইল নেই';
+
+  @override
+  String get profilePhoto => 'প্রোফাইল ছবি';
+
+  @override
+  String get addPhoto => 'ছবি যোগ করুন';
+
+  @override
+  String get preferredName => 'পছন্দের নাম';
+
+  @override
+  String get relationship => 'সম্পর্ক';
+
+  @override
+  String get dateOfBirth => 'জন্মতারিখ';
+
+  @override
+  String get gender => 'লিঙ্গ';
+
+  @override
+  String get male => 'পুরুষ';
+
+  @override
+  String get female => 'নারী';
+
+  @override
+  String get other => 'অন্যান্য';
+
+  @override
+  String get bloodGroup => 'রক্তের গ্রুপ';
+
+  @override
+  String get address => 'ঠিকানা';
+
+  @override
+  String get city => 'শহর';
+
+  @override
+  String get country => 'দেশ';
+
+  @override
+  String get timezone => 'সময় অঞ্চল';
+
+  @override
+  String get preferredLanguage => 'পছন্দের ভাষা';
+
+  @override
+  String get medicalConditions => 'স্বাস্থ্যগত অবস্থা';
+
+  @override
+  String get allergies => 'অ্যালার্জি';
+
+  @override
+  String get mobilityNotes => 'চলাফেরার নোট';
+
+  @override
+  String get doctorNotes => 'ডাক্তারের নোট';
+
+  @override
+  String get emergencyInstructions => 'জরুরি নির্দেশনা';
+
+  @override
+  String get primaryCaregiver => 'প্রধান পরিচর্যাকারী';
+
+  @override
+  String get secondaryCaregiverLabel => 'সহকারী পরিচর্যাকারী';
+
+  @override
+  String get saveProfile => 'প্রোফাইল সংরক্ষণ';
+
+  @override
+  String get profileSaved => 'যত্নের প্রোফাইল সংরক্ষিত হয়েছে';
+
+  @override
+  String get profileArchived => 'যত্নের প্রোফাইল আর্কাইভ হয়েছে';
+
+  @override
+  String get contactAndLocation => 'যোগাযোগ ও অবস্থান';
+
+  @override
+  String get healthAndSafety => 'স্বাস্থ্য ও নিরাপত্তা';
+
+  @override
+  String get careTeam => 'যত্নের দল';
+
+  @override
+  String dashboardFor(String name) {
+    return '$name-এর যত্নের সারাংশ';
+  }
+
+  @override
+  String get documentsThisWeek => 'এই সপ্তাহের নথি';
+
+  @override
+  String get nextAppointment => 'পরবর্তী সাক্ষাৎ';
+
+  @override
+  String get quickActions => 'দ্রুত কাজ';
+
+  @override
+  String get addMedicine => 'ওষুধ যোগ করুন';
+
+  @override
+  String get uploadReport => 'রিপোর্ট আপলোড করুন';
+
+  @override
+  String get addEmergencyContact => 'জরুরি যোগাযোগ যোগ করুন';
+
+  @override
+  String get viewTimeline => 'টাইমলাইন দেখুন';
+
+  @override
+  String careProfileTimezone(String timezone) {
+    return 'যত্নের সময়: $timezone';
+  }
+
+  @override
+  String get partialProfile => 'প্রোফাইলের কিছু তথ্য এখনও যোগ করা দরকার';
+
+  @override
+  String get completeProfile => 'প্রোফাইল সম্পূর্ণ করুন';
+
+  @override
+  String get active => 'সক্রিয়';
+
+  @override
+  String get medicineName => 'ওষুধের নাম';
+
+  @override
+  String get genericName => 'জেনেরিক নাম';
+
+  @override
+  String get brandName => 'ব্র্যান্ডের নাম';
+
+  @override
+  String get strength => 'শক্তি';
+
+  @override
+  String get medicineForm => 'ধরন';
+
+  @override
+  String get dosage => 'ডোজ';
+
+  @override
+  String get quantityPerDose => 'প্রতি ডোজের পরিমাণ';
+
+  @override
+  String get schedule => 'সময়সূচি';
+
+  @override
+  String get frequency => 'বারম্বারতা';
+
+  @override
+  String get onceDaily => 'দিনে একবার';
+
+  @override
+  String get twiceDaily => 'দিনে দুইবার';
+
+  @override
+  String get threeTimesDaily => 'দিনে তিনবার';
+
+  @override
+  String get fourTimesDaily => 'দিনে চারবার';
+
+  @override
+  String get everyXHours => 'প্রতি নির্দিষ্ট ঘণ্টায়';
+
+  @override
+  String get specificDays => 'নির্দিষ্ট দিন';
+
+  @override
+  String get weekly => 'সাপ্তাহিক';
+
+  @override
+  String get monthly => 'মাসিক';
+
+  @override
+  String get asNeeded => 'প্রয়োজন অনুযায়ী';
+
+  @override
+  String get doseTimes => 'ডোজের সময়';
+
+  @override
+  String get addTime => 'সময় যোগ করুন';
+
+  @override
+  String get daysOfWeek => 'সপ্তাহের দিন';
+
+  @override
+  String get startDate => 'শুরুর তারিখ';
+
+  @override
+  String get endDate => 'শেষের তারিখ';
+
+  @override
+  String get longTermMedicine => 'দীর্ঘমেয়াদি ওষুধ';
+
+  @override
+  String get foodInstruction => 'খাবারের নির্দেশনা';
+
+  @override
+  String get beforeFood => 'খাবারের আগে';
+
+  @override
+  String get afterFood => 'খাবারের পরে';
+
+  @override
+  String get withFood => 'খাবারের সঙ্গে';
+
+  @override
+  String get emptyStomach => 'খালি পেটে';
+
+  @override
+  String get prescriptionAndDoctor => 'প্রেসক্রিপশন ও ডাক্তার';
+
+  @override
+  String get prescribedBy => 'যিনি লিখেছেন';
+
+  @override
+  String get linkedDoctor => 'সংযুক্ত ডাক্তার';
+
+  @override
+  String get linkedPrescription => 'সংযুক্ত প্রেসক্রিপশন';
+
+  @override
+  String get stockAndNotes => 'মজুত ও নোট';
+
+  @override
+  String get stockCount => 'মজুত সংখ্যা';
+
+  @override
+  String get lowStockThreshold => 'কম মজুতের সীমা';
+
+  @override
+  String get medicineNotes => 'ওষুধের নোট';
+
+  @override
+  String get sideEffectNotes => 'পার্শ্বপ্রতিক্রিয়ার নোট';
+
+  @override
+  String get saveMedicine => 'ওষুধ সংরক্ষণ';
+
+  @override
+  String get editMedicine => 'ওষুধ সম্পাদনা';
+
+  @override
+  String get medicineDetails => 'ওষুধের বিস্তারিত';
+
+  @override
+  String get lowStock => 'কম মজুত';
+
+  @override
+  String get completed => 'সম্পন্ন';
+
+  @override
+  String get paused => 'বিরতি';
+
+  @override
+  String get stopped => 'বন্ধ';
+
+  @override
+  String get allMedicines => 'সব';
+
+  @override
+  String get noMedicines => 'এই তালিকায় কোনো ওষুধ নেই';
+
+  @override
+  String tabletsLeft(int count) {
+    return '$countটি বাকি';
+  }
+
+  @override
+  String get pauseMedicine => 'ওষুধে বিরতি দিন';
+
+  @override
+  String get resumeMedicine => 'ওষুধ আবার চালু করুন';
+
+  @override
+  String get completeMedicine => 'ওষুধ সম্পন্ন করুন';
+
+  @override
+  String get stopMedicine => 'ওষুধ বন্ধ করুন';
+
+  @override
+  String get schedulePreview => 'আসন্ন ডোজের সারাংশ';
+
+  @override
+  String schedulePreviewBody(String timezone) {
+    return 'রিমাইন্ডার $timezone যত্ন-প্রোফাইলের সময় ব্যবহার করবে।';
+  }
+
+  @override
+  String nextDosePreview(String date, String time) {
+    return 'পরবর্তী: $date, $time';
+  }
+
+  @override
+  String get medicineSaved => 'ওষুধ সংরক্ষিত হয়েছে';
+
+  @override
+  String get scheduleChangeWarning =>
+      'এই সময়সূচি বদলালে নিশ্চিত করার পর ভবিষ্যৎ রিমাইন্ডার পরিবর্তিত হবে।';
+
+  @override
+  String get confirmSchedule => 'সময়সূচি নিশ্চিত করুন';
+
+  @override
+  String get timeForMedicine => 'ওষুধ নেওয়ার সময় হয়েছে';
+
+  @override
+  String get takenAction => 'আমি ওষুধ নিয়েছি';
+
+  @override
+  String get snooze15 => '১৫ মিনিট পরে মনে করান';
+
+  @override
+  String get skipDose => 'এই ডোজটি বাদ দিন';
+
+  @override
+  String get needHelpAction => 'আমার সাহায্য দরকার';
+
+  @override
+  String get reminderHistory => 'রিমাইন্ডারের ইতিহাস';
+
+  @override
+  String get scheduled => 'নির্ধারিত';
+
+  @override
+  String get dueNow => 'এখন নেওয়ার সময়';
+
+  @override
+  String get takenStatus => 'নেওয়া হয়েছে';
+
+  @override
+  String get snoozed => 'পরে মনে করানো হবে';
+
+  @override
+  String get skipped => 'বাদ দেওয়া হয়েছে';
+
+  @override
+  String get missed => 'মিস হয়েছে';
+
+  @override
+  String get escalated => 'সহায়তা পাঠানো হয়েছে';
+
+  @override
+  String get resolved => 'সমাধান হয়েছে';
+
+  @override
+  String get cancelled => 'বাতিল';
+
+  @override
+  String get queuedOffline => 'অফলাইনে সংরক্ষিত — সংযোগ এলে এটি সিঙ্ক হবে।';
+
+  @override
+  String get offlineDemo => 'ডেমো অফলাইন মোড';
+
+  @override
+  String get offlineDemoBody =>
+      'সংযোগ না আসা পর্যন্ত কাজগুলো এই ডিভাইসে নিরাপদে থাকবে।';
+
+  @override
+  String get reminderPermissionHealth => 'রিমাইন্ডার প্রস্তুতি';
+
+  @override
+  String get notificationsAllowed => 'নোটিফিকেশন অনুমোদিত';
+
+  @override
+  String get batteryGuidance =>
+      'ব্যাটারি ও ফোকাস সেটিংস অ্যালার্মে প্রভাব ফেলতে পারে।';
+
+  @override
+  String get deliveryLimitation =>
+      'কেয়ারব্রিজ অ্যালার্ম পৌঁছানোর নিশ্চয়তা দেয় না। জরুরি সাহায্যের জন্য পরিচর্যাকারী বা জরুরি যোগাযোগে ফোন করুন।';
+
+  @override
+  String get noReminderDue => 'এখন কোনো ওষুধ নেওয়ার সময় নয়';
+
+  @override
+  String get viewReminderHistory => 'রিমাইন্ডারের ইতিহাস দেখুন';
+
+  @override
+  String get actionRecorded => 'কাজটি সংরক্ষিত হয়েছে';
+
+  @override
+  String get helpRequested =>
+      'পরিচর্যাকারীর কাছে সাহায্যের অনুরোধ পাঠানো হয়েছে';
+
+  @override
+  String get filterStatus => 'অবস্থা দিয়ে ফিল্টার';
+
+  @override
+  String get allStatuses => 'সব অবস্থা';
+
+  @override
+  String showingDemoRecords(int count) {
+    return '$countটি বাস্তবসম্মত স্থানীয় ডেমো রেকর্ড দেখানো হচ্ছে';
+  }
+
+  @override
+  String demoDatasetSummary(int profiles, int medicines, int reminders) {
+    return 'ডেমো তথ্য: $profilesটি প্রোফাইল · $medicinesটি ওষুধ · $remindersটি রিমাইন্ডার';
+  }
+
+  @override
+  String get caregiverAlerts => 'পরিচর্যাকারীর সতর্কতা';
+
+  @override
+  String get missedReminderAlert => 'ওষুধের রিমাইন্ডার মিস হয়েছে';
+
+  @override
+  String get remoteRing => 'এখনই রিং করুন';
+
+  @override
+  String get sendReminder => 'রিমাইন্ডার পাঠান';
+
+  @override
+  String get callParent => 'অভিভাবককে ফোন করুন';
+
+  @override
+  String get notifyLocalContact => 'স্থানীয় যোগাযোগকে জানান';
+
+  @override
+  String get resolveAlert => 'সতর্কতা সমাধান করুন';
+
+  @override
+  String get alertResolved => 'সতর্কতা সমাধান হয়েছে';
+
+  @override
+  String get deliveryTracking => 'ডেলিভারি পর্যবেক্ষণ';
+
+  @override
+  String get requested => 'অনুরোধ করা হয়েছে';
+
+  @override
+  String get sent => 'পাঠানো হয়েছে';
+
+  @override
+  String get delivered => 'পৌঁছেছে';
+
+  @override
+  String get opened => 'খোলা হয়েছে';
+
+  @override
+  String get actioned => 'পদক্ষেপ নেওয়া হয়েছে';
+
+  @override
+  String get failed => 'ব্যর্থ';
+
+  @override
+  String parentLocalTime(String timezone, String time) {
+    return 'অভিভাবকের সময় ($timezone): $time';
+  }
+
+  @override
+  String caregiverLocalTime(String time) {
+    return 'আপনার সময় (Europe/London): $time';
+  }
+
+  @override
+  String get remoteRingSent => 'অভিভাবকের ডিভাইসে রিমোট রিং পৌঁছেছে।';
+
+  @override
+  String get reminderSent => 'অভিভাবকের ডিভাইসে রিমাইন্ডার পৌঁছেছে।';
+
+  @override
+  String get ringRateLimited => 'আরেকটি অ্যালার্ম পাঠানোর আগে অপেক্ষা করুন।';
+
+  @override
+  String get remoteDeliveryWarning =>
+      'রিমোট রিং পৌঁছানোর নিশ্চয়তা নেই। ফোন অফলাইন, মিউট, কম ব্যাটারি বা অপারেটিং সিস্টেম দ্বারা সীমাবদ্ধ হতে পারে।';
+
+  @override
+  String get fallbackActions => 'বিকল্প পদক্ষেপ';
+
+  @override
+  String missedAt(String time) {
+    return '$time-এ মিস হয়েছে';
+  }
+
+  @override
+  String get noCaregiverAlerts => 'কোনো পরিচর্যাকারী সতর্কতা নেই';
+
+  @override
+  String get alarmRequestHistory => 'অ্যালার্ম অনুরোধের ইতিহাস';
 }

@@ -1,0 +1,20 @@
+stateDiagram-v2
+    [*] --> Active: Create and confirm schedule
+    Active --> Paused: Pause
+    Paused --> Active: Resume
+    Active --> Completed: Course completed
+    Paused --> Completed: Mark completed
+    Active --> Stopped: Stop medicine
+    Paused --> Stopped: Stop medicine
+    Completed --> [*]
+    Stopped --> [*]
+
+    note right of Active
+      Generates future reminder instances
+      Tracks stock and low-stock threshold
+    end note
+
+    note right of Paused
+      Future reminders are suspended
+      History remains visible
+    end note

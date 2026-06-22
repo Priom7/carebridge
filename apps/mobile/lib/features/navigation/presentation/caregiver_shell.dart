@@ -126,19 +126,25 @@ class _CareHeader extends StatelessWidget {
               tooltip: l10n.switchProfile,
               initialValue: settings.selectedProfile,
               onSelected: settings.setProfile,
-              itemBuilder: (_) => [
-                PopupMenuItem(value: 'father', child: Text(l10n.father)),
-                PopupMenuItem(value: 'mother', child: Text(l10n.mother)),
-              ],
+              itemBuilder: (_) => settings.careProfiles
+                  .where((profile) => profile.status.name == 'active')
+                  .map(
+                    (profile) => PopupMenuItem(
+                      value: profile.id,
+                      child: Text(profile.preferredName),
+                    ),
+                  )
+                  .toList(),
               child: Semantics(
                 button: true,
                 label: l10n.switchProfile,
                 child: Chip(
-                  avatar: const CircleAvatar(child: Text('AK')),
+                  avatar: CircleAvatar(
+                    child: Text(settings.selectedCareProfile?.initials ?? 'CB'),
+                  ),
                   label: Text(
-                    settings.selectedProfile == 'father'
-                        ? l10n.father
-                        : l10n.mother,
+                    settings.selectedCareProfile?.preferredName ??
+                        l10n.careProfiles,
                   ),
                   deleteIcon: const Icon(Icons.expand_more),
                   onDeleted: () {},

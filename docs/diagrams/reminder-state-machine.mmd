@@ -1,0 +1,22 @@
+stateDiagram-v2
+    [*] --> Scheduled
+    Scheduled --> Due: Scheduled time reached
+    Due --> Taken: Parent confirms
+    Due --> Snoozed: Remind later
+    Snoozed --> Due: Snooze expires
+    Due --> Skipped: Parent skips
+    Due --> Escalated: Need Help
+    Due --> Missed: Grace period expires
+    Missed --> Escalated: Caregiver notified
+    Escalated --> Resolved: Parent/contact/caregiver resolves
+    Scheduled --> Cancelled: Schedule changed/stopped
+    Due --> Cancelled: Medicine stopped
+    Taken --> [*]
+    Skipped --> [*]
+    Resolved --> [*]
+    Cancelled --> [*]
+
+    note right of Taken
+      Offline action may enter a queued outbox
+      Server sync remains idempotent
+    end note

@@ -1,0 +1,25 @@
+flowchart TD
+    Start["Select active care profile"] --> Identity["Medicine identity + dosage"]
+    Identity --> Frequency{"Frequency"}
+    Frequency --> Daily["1–4 times daily"]
+    Frequency --> Hours["Every X hours"]
+    Frequency --> Days["Specific days / weekly"]
+    Frequency --> Monthly["Monthly"]
+    Frequency --> Needed["As needed"]
+    Daily --> Times["Select dose times"]
+    Hours --> Times
+    Days --> Times
+    Monthly --> Times
+    Needed --> Dates["Start / end / long-term"]
+    Times --> Dates
+    Dates --> Food["Food instruction"]
+    Food --> Timezone["Bind IANA care-profile timezone"]
+    Timezone --> Preview["Preview upcoming local dose"]
+    Preview --> Links["Doctor / prescription links"]
+    Links --> Stock["Stock + low-stock threshold"]
+    Stock --> Validate{"Valid and unambiguous?"}
+    Validate -->|"No"| Identity
+    Validate -->|"Yes"| Existing{"Editing existing schedule?"}
+    Existing -->|"Yes"| Confirm["Confirm future reminder changes"]
+    Existing -->|"No"| Save["Save Active medicine"]
+    Confirm --> Save

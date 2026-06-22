@@ -12,6 +12,15 @@ import '../../features/auth/presentation/register_page.dart';
 import '../../features/auth/presentation/sign_in_page.dart';
 import '../../features/auth/presentation/verify_page.dart';
 import '../../features/auth/presentation/welcome_page.dart';
+import '../../features/care_profiles/presentation/care_profile_form_page.dart';
+import '../../features/care_profiles/presentation/care_profiles_page.dart';
+import '../../features/medicines/presentation/medicine_detail_page.dart';
+import '../../features/medicines/presentation/medicine_form_page.dart';
+import '../../features/medicines/presentation/medicines_page.dart';
+import '../../features/reminders/presentation/reminder_action_page.dart';
+import '../../features/reminders/presentation/reminder_history_page.dart';
+import '../../features/reminders/presentation/caregiver_alert_detail_page.dart';
+import '../../features/reminders/presentation/caregiver_alerts_page.dart';
 import '../../features/navigation/presentation/care_destination_page.dart';
 import '../../features/navigation/presentation/caregiver_home_page.dart';
 import '../../features/navigation/presentation/caregiver_shell.dart';
@@ -54,9 +63,14 @@ GoRouter createAppRouter(AppSettings settings) {
           path == '/onboarding') {
         return '/home';
       }
-      final isParentRoute = state.matchedLocation == '/parent';
-      if (settings.role == AppRole.parent && !isParentRoute) return '/parent';
-      if (settings.role == AppRole.caregiver && isParentRoute) return '/home';
+      final isParentHome = state.matchedLocation == '/parent';
+      final isReminderRoute = state.matchedLocation.startsWith('/reminders/');
+      if (settings.role == AppRole.parent &&
+          !isParentHome &&
+          !isReminderRoute) {
+        return '/parent';
+      }
+      if (settings.role == AppRole.caregiver && isParentHome) return '/home';
       return null;
     },
     routes: [
@@ -92,11 +106,13 @@ GoRouter createAppRouter(AppSettings settings) {
           child: child,
         ),
         routes: [
-          GoRoute(path: '/home', builder: (_, _) => const CaregiverHomePage()),
+          GoRoute(
+            path: '/home',
+            builder: (_, _) => CaregiverHomePage(settings: settings),
+          ),
           GoRoute(
             path: '/medicines',
-            builder: (_, _) =>
-                const CareDestinationPage(kind: CareDestinationKind.medicines),
+            builder: (_, _) => MedicinesPage(settings: settings),
           ),
           GoRoute(
             path: '/health',
@@ -124,11 +140,96 @@ GoRouter createAppRouter(AppSettings settings) {
             path: '/family',
             builder: (_, _) => FamilyManagementPage(settings: settings),
           ),
+          GoRoute(
+            path: '/profiles',
+            builder: (_, _) => CareProfilesPage(settings: settings),
+          ),
+          GoRoute(
+            path: '/caregiver-alerts',
+            builder: (_, _) => CaregiverAlertsPage(settings: settings),
+          ),
         ],
+      ),
+      GoRoute(
+        path: '/profiles/new',
+        builder: (_, _) => CareProfileFormPage(settings: settings),
+      ),
+      GoRoute(
+        path: '/profiles/:id/edit',
+        builder: (context, state) {
+          final id = state.pathParameters['id'];
+          final matches = settings.careProfiles.where((item) => item.id == id);
+          return CareProfileFormPage(
+            settings: settings,
+            profile: matches.isEmpty ? null : matches.first,
+          );
+        },
+      ),
+      GoRoute(
+        path: '/medicines/new',
+        builder: (_, _) => MedicineFormPage(settings: settings),
+      ),
+      GoRoute(
+        path: '/medicines/:id',
+        builder: (context, state) {
+          final matches = settings.medicines.where(
+            (item) => item.id == state.pathParameters['id'],
+          );
+          if (matches.isEmpty) {
+            return Scaffold(
+              body: Center(
+                child: Text(AppLocalizations.of(context).pageNotFound),
+              ),
+            );
+          }
+          return MedicineDetailPage(
+            settings: settings,
+            medicine: matches.first,
+          );
+        },
+      ),
+      GoRoute(
+        path: '/medicines/:id/edit',
+        builder: (context, state) {
+          final matches = settings.medicines.where(
+            (item) => item.id == state.pathParameters['id'],
+          );
+          return MedicineFormPage(
+            settings: settings,
+            medicine: matches.isEmpty ? null : matches.first,
+          );
+        },
       ),
       GoRoute(
         path: '/parent',
         builder: (_, _) => ParentHomePage(settings: settings),
+      ),
+      GoRoute(
+        path: '/reminders/current',
+        builder: (_, _) => ReminderActionPage(settings: settings),
+      ),
+      GoRoute(
+        path: '/reminders/history',
+        builder: (_, _) => ReminderHistoryPage(settings: settings),
+      ),
+      GoRoute(
+        path: '/caregiver-alerts/:id',
+        builder: (context, state) {
+          final matches = settings.reminders.where(
+            (item) => item.id == state.pathParameters['id'],
+          );
+          if (matches.isEmpty) {
+            return Scaffold(
+              body: Center(
+                child: Text(AppLocalizations.of(context).pageNotFound),
+              ),
+            );
+          }
+          return CaregiverAlertDetailPage(
+            settings: settings,
+            reminder: matches.first,
+          );
+        },
       ),
       GoRoute(
         path: '/design-system',
