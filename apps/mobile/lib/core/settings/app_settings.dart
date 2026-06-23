@@ -6,6 +6,8 @@ import '../../features/medicines/domain/medicine.dart';
 import '../../features/reminders/domain/reminder_event.dart';
 import '../../features/reminders/domain/alarm_request.dart';
 import '../../features/care_profiles/domain/care_profile.dart';
+import '../../features/emergency/domain/emergency_models.dart';
+import '../../features/documents/domain/health_document.dart';
 
 enum AppRole { caregiver, parent }
 
@@ -44,6 +46,9 @@ class AppSettings extends ChangeNotifier {
   final List<Medicine> medicines = [];
   final List<ReminderEvent> reminders = [];
   final List<AlarmRequest> alarmRequests = [];
+  final List<EmergencyContact> emergencyContacts = [];
+  final List<EmergencyAlert> emergencyAlerts = [];
+  final List<HealthDocument> documents = [];
   bool demoOffline = false;
 
   bool get isDark => themeMode == ThemeMode.dark;
@@ -388,6 +393,177 @@ class AppSettings extends ChangeNotifier {
     actOnReminder(id, ReminderStatus.resolved);
   }
 
+  List<EmergencyContact> emergencyContactsForSelectedProfile() =>
+      emergencyContacts
+          .where((contact) => contact.careProfileId == selectedProfile)
+          .toList()
+        ..sort((a, b) => a.priorityLevel.compareTo(b.priorityLevel));
+
+  List<EmergencyAlert> emergencyAlertsForSelectedProfile() =>
+      emergencyAlerts
+          .where((alert) => alert.careProfileId == selectedProfile)
+          .toList()
+        ..sort((a, b) => b.triggeredAt.compareTo(a.triggeredAt));
+
+  void saveEmergencyContact(EmergencyContact contact) {
+    final index = emergencyContacts.indexWhere((item) => item.id == contact.id);
+    if (index < 0) {
+      emergencyContacts.add(contact);
+    } else {
+      emergencyContacts[index] = contact;
+    }
+    notifyListeners();
+  }
+
+  void setEmergencyContactStatus(String id, ContactVerificationStatus status) {
+    final index = emergencyContacts.indexWhere((item) => item.id == id);
+    if (index < 0) return;
+    emergencyContacts[index] = emergencyContacts[index].copyWith(
+      verificationStatus: status,
+    );
+    notifyListeners();
+  }
+
+  EmergencyAlert triggerEmergencyAlert({required String reason}) {
+    final now = DateTime.now();
+    final alert = EmergencyAlert(
+      id: 'emergency-live-${now.microsecondsSinceEpoch}',
+      careProfileId: selectedProfile,
+      triggeredBy: role == AppRole.parent ? 'Parent' : 'Caregiver',
+      reason: reason,
+      status: EmergencyAlertStatus.active,
+      triggeredAt: now,
+      acceptedBy: '',
+      resolvedAt: '',
+      timeline: ['Alert triggered', 'Priority 1 contacts notified'],
+    );
+    emergencyAlerts.add(alert);
+    notifyListeners();
+    return alert;
+  }
+
+  void notifyPriorityOne(String id) {
+    _updateEmergencyAlert(
+      id,
+      (alert) => alert.copyWith(
+        timeline: [...alert.timeline, 'Priority 1 contacts notified again'],
+      ),
+    );
+  }
+
+  void acceptEmergencyAlert(String id, String contactName) {
+    _updateEmergencyAlert(
+      id,
+      (alert) => alert.copyWith(
+        status: EmergencyAlertStatus.accepted,
+        acceptedBy: contactName,
+        timeline: [...alert.timeline, '$contactName is going to help'],
+      ),
+    );
+  }
+
+  void resolveEmergencyAlert(String id) {
+    final now = DateTime.now();
+    _updateEmergencyAlert(
+      id,
+      (alert) => alert.copyWith(
+        status: EmergencyAlertStatus.resolved,
+        resolvedAt:
+            '${now.day}/${now.month}/${now.year} ${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}',
+        timeline: [...alert.timeline, 'Alert resolved'],
+      ),
+    );
+  }
+
+  void _updateEmergencyAlert(
+    String id,
+    EmergencyAlert Function(EmergencyAlert alert) update,
+  ) {
+    final index = emergencyAlerts.indexWhere((item) => item.id == id);
+    if (index < 0) return;
+    emergencyAlerts[index] = update(emergencyAlerts[index]);
+    notifyListeners();
+  }
+
+  List<HealthDocument> documentsForSelectedProfile() =>
+      documents
+          .where((document) => document.careProfileId == selectedProfile)
+          .toList()
+        ..sort((a, b) => b.documentDate.compareTo(a.documentDate));
+
+  void saveDocument(HealthDocument document) {
+    final index = documents.indexWhere((item) => item.id == document.id);
+    if (index < 0) {
+      documents.add(document);
+    } else {
+      documents[index] = document;
+    }
+    notifyListeners();
+  }
+
+  void retryDocumentUpload(String id) {
+    _updateDocument(
+      id,
+      (document) => document.copyWith(
+        uploadStatus: DocumentUploadStatus.ready,
+        uploadProgress: 1,
+        accessHistory: [
+          ...document.accessHistory,
+          const DocumentAccessEvent(
+            actor: 'Sharif Rahman',
+            action: 'Upload retried successfully',
+            timestamp: 'Just now',
+          ),
+        ],
+      ),
+    );
+  }
+
+  void recordDocumentAccess(String id, String action) {
+    _updateDocument(
+      id,
+      (document) => document.copyWith(
+        accessHistory: [
+          ...document.accessHistory,
+          DocumentAccessEvent(
+            actor: 'Sharif Rahman',
+            action: action,
+            timestamp: 'Just now',
+          ),
+        ],
+      ),
+    );
+  }
+
+  void setDocumentStatus(String id, HealthDocumentStatus status) {
+    _updateDocument(
+      id,
+      (document) => document.copyWith(
+        status: status,
+        accessHistory: [
+          ...document.accessHistory,
+          DocumentAccessEvent(
+            actor: 'Sharif Rahman',
+            action: status == HealthDocumentStatus.archived
+                ? 'Archived'
+                : 'Deleted',
+            timestamp: 'Just now',
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _updateDocument(
+    String id,
+    HealthDocument Function(HealthDocument document) update,
+  ) {
+    final index = documents.indexWhere((item) => item.id == id);
+    if (index < 0) return;
+    documents[index] = update(documents[index]);
+    notifyListeners();
+  }
+
   void archiveCareProfile(String id) {
     final index = careProfiles.indexWhere((item) => item.id == id);
     if (index < 0) return;
@@ -417,6 +593,9 @@ class AppSettings extends ChangeNotifier {
       ..addAll(DemoFixtures.medicines());
     reminders.addAll(DemoFixtures.reminders());
     alarmRequests.addAll(DemoFixtures.alarmRequests());
+    emergencyContacts.addAll(DemoFixtures.emergencyContacts());
+    emergencyAlerts.addAll(DemoFixtures.emergencyAlerts());
+    documents.addAll(DemoFixtures.documents());
   }
 
   static CareProfile _fatherProfile() => const CareProfile(

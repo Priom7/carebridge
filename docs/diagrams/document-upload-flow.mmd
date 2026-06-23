@@ -1,0 +1,13 @@
+flowchart TD
+  A[Open profile document vault] --> B{Choose source}
+  B -->|Camera| C{Camera allowed?}
+  B -->|File or photo| D[Validate MIME and size]
+  C -->|No| E[Show settings and file fallback]
+  C -->|Yes| D
+  D -->|Unsupported or over 20 MB| F[Reject with recoverable message]
+  D -->|Valid| G[Show local upload progress]
+  G --> H[Enter metadata, links, and visibility]
+  H --> I[Save profile-scoped document]
+  I --> J[Record upload audit event]
+  G -->|Failure| K[Keep draft and show Retry]
+  K --> G

@@ -17,6 +17,13 @@ import '../../features/care_profiles/presentation/care_profiles_page.dart';
 import '../../features/medicines/presentation/medicine_detail_page.dart';
 import '../../features/medicines/presentation/medicine_form_page.dart';
 import '../../features/medicines/presentation/medicines_page.dart';
+import '../../features/emergency/presentation/emergency_alert_detail_page.dart';
+import '../../features/emergency/presentation/emergency_alerts_page.dart';
+import '../../features/emergency/presentation/emergency_contact_form_page.dart';
+import '../../features/emergency/presentation/emergency_contacts_page.dart';
+import '../../features/documents/presentation/document_upload_page.dart';
+import '../../features/documents/presentation/document_vault_page.dart';
+import '../../features/documents/presentation/document_viewer_page.dart';
 import '../../features/reminders/presentation/reminder_action_page.dart';
 import '../../features/reminders/presentation/reminder_history_page.dart';
 import '../../features/reminders/presentation/caregiver_alert_detail_page.dart';
@@ -121,8 +128,7 @@ GoRouter createAppRouter(AppSettings settings) {
           ),
           GoRoute(
             path: '/documents',
-            builder: (_, _) =>
-                const CareDestinationPage(kind: CareDestinationKind.documents),
+            builder: (_, _) => DocumentVaultPage(settings: settings),
           ),
           GoRoute(
             path: '/more',
@@ -148,7 +154,49 @@ GoRouter createAppRouter(AppSettings settings) {
             path: '/caregiver-alerts',
             builder: (_, _) => CaregiverAlertsPage(settings: settings),
           ),
+          GoRoute(
+            path: '/emergency-contacts',
+            builder: (_, _) => EmergencyContactsPage(settings: settings),
+          ),
+          GoRoute(
+            path: '/emergency-alerts',
+            builder: (_, _) => EmergencyAlertsPage(settings: settings),
+          ),
         ],
+      ),
+      GoRoute(
+        path: '/emergency-contacts/new',
+        builder: (_, _) => EmergencyContactFormPage(settings: settings),
+      ),
+      GoRoute(
+        path: '/emergency-contacts/:id/edit',
+        builder: (_, state) {
+          final matches = settings.emergencyContacts.where(
+            (item) => item.id == state.pathParameters['id'],
+          );
+          return EmergencyContactFormPage(
+            settings: settings,
+            contact: matches.isEmpty ? null : matches.first,
+          );
+        },
+      ),
+      GoRoute(
+        path: '/emergency-alerts/:id',
+        builder: (_, state) => EmergencyAlertDetailPage(
+          settings: settings,
+          alertId: state.pathParameters['id']!,
+        ),
+      ),
+      GoRoute(
+        path: '/documents/upload',
+        builder: (_, _) => DocumentUploadPage(settings: settings),
+      ),
+      GoRoute(
+        path: '/documents/:id',
+        builder: (_, state) => DocumentViewerPage(
+          settings: settings,
+          documentId: state.pathParameters['id']!,
+        ),
       ),
       GoRoute(
         path: '/profiles/new',

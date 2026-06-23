@@ -17,6 +17,9 @@ void main() {
     expect(settings.medicines.length, inInclusiveRange(30, 50));
     expect(settings.reminders.length, inInclusiveRange(30, 50));
     expect(settings.alarmRequests.length, inInclusiveRange(30, 50));
+    expect(settings.emergencyContacts.length, inInclusiveRange(30, 50));
+    expect(settings.emergencyAlerts.length, inInclusiveRange(30, 50));
+    expect(settings.documents.length, inInclusiveRange(30, 50));
     expect(
       settings.careProfiles.map((item) => item.fullName).toSet().length,
       greaterThan(20),

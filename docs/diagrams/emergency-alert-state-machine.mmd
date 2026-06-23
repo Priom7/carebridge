@@ -1,0 +1,7 @@
+stateDiagram-v2
+  [*] --> Active: Need Help / caregiver trigger
+  Active --> Active: Notify Priority 1 again
+  Active --> Accepted: Contact accepts
+  Active --> Resolved: Caregiver resolves
+  Accepted --> Resolved: Caregiver confirms safe
+  Resolved --> [*]

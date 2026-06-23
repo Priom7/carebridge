@@ -1319,7 +1319,7 @@ abstract class AppLocalizations {
   /// No description provided for @addEmergencyContact.
   ///
   /// In en, this message translates to:
-  /// **'Add emergency contact'**
+  /// **'Add contact'**
   String get addEmergencyContact;
 
   /// No description provided for @viewTimeline.
@@ -2029,6 +2029,570 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Alarm request history'**
   String get alarmRequestHistory;
+
+  /// No description provided for @editEmergencyContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit emergency contact'**
+  String get editEmergencyContact;
+
+  /// No description provided for @contactName.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact name'**
+  String get contactName;
+
+  /// No description provided for @contactType.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact type'**
+  String get contactType;
+
+  /// No description provided for @primaryPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Primary phone'**
+  String get primaryPhone;
+
+  /// No description provided for @secondaryPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Secondary phone'**
+  String get secondaryPhone;
+
+  /// No description provided for @whatsappNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'WhatsApp number'**
+  String get whatsappNumber;
+
+  /// No description provided for @distance.
+  ///
+  /// In en, this message translates to:
+  /// **'Distance from care recipient'**
+  String get distance;
+
+  /// No description provided for @availability.
+  ///
+  /// In en, this message translates to:
+  /// **'Availability'**
+  String get availability;
+
+  /// No description provided for @preferredContactMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferred contact method'**
+  String get preferredContactMethod;
+
+  /// No description provided for @priorityLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority'**
+  String get priorityLevel;
+
+  /// No description provided for @contactNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact notes'**
+  String get contactNotes;
+
+  /// No description provided for @emergencyPermissions.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency permissions'**
+  String get emergencyPermissions;
+
+  /// No description provided for @permissionWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Share only the minimum information this person needs.'**
+  String get permissionWarning;
+
+  /// No description provided for @receiveEmergencyAlert.
+  ///
+  /// In en, this message translates to:
+  /// **'Receives emergency alerts'**
+  String get receiveEmergencyAlert;
+
+  /// No description provided for @receiveMissedMedicineAlert.
+  ///
+  /// In en, this message translates to:
+  /// **'Receives missed-medicine alerts'**
+  String get receiveMissedMedicineAlert;
+
+  /// No description provided for @viewBasicProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Can view basic profile'**
+  String get viewBasicProfile;
+
+  /// No description provided for @viewMedicalSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Can view medical summary'**
+  String get viewMedicalSummary;
+
+  /// No description provided for @viewDocumentsPermission.
+  ///
+  /// In en, this message translates to:
+  /// **'Can view documents'**
+  String get viewDocumentsPermission;
+
+  /// No description provided for @viewLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Can view location'**
+  String get viewLocation;
+
+  /// No description provided for @saveContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Save contact'**
+  String get saveContact;
+
+  /// No description provided for @contactAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Added'**
+  String get contactAdded;
+
+  /// No description provided for @contactInvited.
+  ///
+  /// In en, this message translates to:
+  /// **'Invited'**
+  String get contactInvited;
+
+  /// No description provided for @contactVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get contactVerified;
+
+  /// No description provided for @inactive.
+  ///
+  /// In en, this message translates to:
+  /// **'Inactive'**
+  String get inactive;
+
+  /// No description provided for @removed.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed'**
+  String get removed;
+
+  /// No description provided for @call.
+  ///
+  /// In en, this message translates to:
+  /// **'Call'**
+  String get call;
+
+  /// No description provided for @whatsapp.
+  ///
+  /// In en, this message translates to:
+  /// **'WhatsApp'**
+  String get whatsapp;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @callingContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Calling {phone}'**
+  String callingContact(String phone);
+
+  /// No description provided for @openingWhatsapp.
+  ///
+  /// In en, this message translates to:
+  /// **'Opening WhatsApp for {phone}'**
+  String openingWhatsapp(String phone);
+
+  /// No description provided for @emergencyAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency help alerts'**
+  String get emergencyAlerts;
+
+  /// No description provided for @noEmergencyAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'No emergency alerts'**
+  String get noEmergencyAlerts;
+
+  /// No description provided for @emergencyAlertDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency alert'**
+  String get emergencyAlertDetail;
+
+  /// No description provided for @triggeredBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Triggered by'**
+  String get triggeredBy;
+
+  /// No description provided for @acceptedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Accepted by'**
+  String get acceptedBy;
+
+  /// No description provided for @alertTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Alert timeline'**
+  String get alertTimeline;
+
+  /// No description provided for @notifyPriorityOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Notify Priority 1 contacts'**
+  String get notifyPriorityOne;
+
+  /// No description provided for @goingToHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'I am going to help'**
+  String get goingToHelp;
+
+  /// No description provided for @resolveEmergency.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolve emergency'**
+  String get resolveEmergency;
+
+  /// No description provided for @uploadDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload document'**
+  String get uploadDocument;
+
+  /// No description provided for @searchDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'Search title, doctor, or tag'**
+  String get searchDocuments;
+
+  /// No description provided for @filterDocumentType.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by document type'**
+  String get filterDocumentType;
+
+  /// No description provided for @allDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'All documents'**
+  String get allDocuments;
+
+  /// No description provided for @includeArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Include archived documents'**
+  String get includeArchived;
+
+  /// No description provided for @noDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'No documents match these filters'**
+  String get noDocuments;
+
+  /// No description provided for @archived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get archived;
+
+  /// No description provided for @uploadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload failed. The local draft is safe.'**
+  String get uploadFailed;
+
+  /// No description provided for @retryUpload.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retryUpload;
+
+  /// No description provided for @prescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Prescription'**
+  String get prescription;
+
+  /// No description provided for @bloodTestReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Blood test report'**
+  String get bloodTestReport;
+
+  /// No description provided for @urineTestReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Urine test report'**
+  String get urineTestReport;
+
+  /// No description provided for @ultrasound.
+  ///
+  /// In en, this message translates to:
+  /// **'Ultrasound'**
+  String get ultrasound;
+
+  /// No description provided for @dischargeSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Discharge summary'**
+  String get dischargeSummary;
+
+  /// No description provided for @doctorNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Doctor note'**
+  String get doctorNote;
+
+  /// No description provided for @medicinePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Medicine photo'**
+  String get medicinePhoto;
+
+  /// No description provided for @hospitalBill.
+  ///
+  /// In en, this message translates to:
+  /// **'Hospital bill'**
+  String get hospitalBill;
+
+  /// No description provided for @insuranceDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Insurance document'**
+  String get insuranceDocument;
+
+  /// No description provided for @followUpNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow-up note'**
+  String get followUpNote;
+
+  /// No description provided for @chooseFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a PDF or image'**
+  String get chooseFile;
+
+  /// No description provided for @choosePdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose PDF'**
+  String get choosePdf;
+
+  /// No description provided for @chooseImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose image'**
+  String get chooseImage;
+
+  /// No description provided for @takePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Take photo'**
+  String get takePhoto;
+
+  /// No description provided for @cameraPermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera permission was denied. Enable it in Settings or choose an existing file.'**
+  String get cameraPermissionDenied;
+
+  /// No description provided for @simulateCameraDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Test camera denied'**
+  String get simulateCameraDenied;
+
+  /// No description provided for @simulateInvalidFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Test invalid file'**
+  String get simulateInvalidFile;
+
+  /// No description provided for @unsupportedFileType.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsupported file type. Use PDF, JPG, or PNG.'**
+  String get unsupportedFileType;
+
+  /// No description provided for @fileTooLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'File is too large. The maximum size is 20 MB.'**
+  String get fileTooLarge;
+
+  /// No description provided for @chooseFileFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a valid file before uploading.'**
+  String get chooseFileFirst;
+
+  /// No description provided for @documentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Document title'**
+  String get documentTitle;
+
+  /// No description provided for @documentType.
+  ///
+  /// In en, this message translates to:
+  /// **'Document type'**
+  String get documentType;
+
+  /// No description provided for @doctorName.
+  ///
+  /// In en, this message translates to:
+  /// **'Doctor name'**
+  String get doctorName;
+
+  /// No description provided for @hospitalClinic.
+  ///
+  /// In en, this message translates to:
+  /// **'Hospital or clinic'**
+  String get hospitalClinic;
+
+  /// No description provided for @documentDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Document date'**
+  String get documentDate;
+
+  /// No description provided for @tags.
+  ///
+  /// In en, this message translates to:
+  /// **'Tags'**
+  String get tags;
+
+  /// No description provided for @linkedMedicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked medicine'**
+  String get linkedMedicine;
+
+  /// No description provided for @linkedAppointment.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked appointment'**
+  String get linkedAppointment;
+
+  /// No description provided for @linkedCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked condition'**
+  String get linkedCondition;
+
+  /// No description provided for @notes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get notes;
+
+  /// No description provided for @visibilityPermissions.
+  ///
+  /// In en, this message translates to:
+  /// **'Visibility permissions'**
+  String get visibilityPermissions;
+
+  /// No description provided for @documentPermissionWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Only selected family members can open this document. Emergency access does not grant document access.'**
+  String get documentPermissionWarning;
+
+  /// No description provided for @ownerRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Owner access is required'**
+  String get ownerRequired;
+
+  /// No description provided for @uploadAndSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload and save'**
+  String get uploadAndSave;
+
+  /// No description provided for @secureDocumentViewer.
+  ///
+  /// In en, this message translates to:
+  /// **'Secure document viewer'**
+  String get secureDocumentViewer;
+
+  /// No description provided for @localSecurePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Protected local demo preview'**
+  String get localSecurePreview;
+
+  /// No description provided for @download.
+  ///
+  /// In en, this message translates to:
+  /// **'Download'**
+  String get download;
+
+  /// No description provided for @share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get share;
+
+  /// No description provided for @downloadedSecurely.
+  ///
+  /// In en, this message translates to:
+  /// **'Secure download prepared.'**
+  String get downloadedSecurely;
+
+  /// No description provided for @sharePermissionChecked.
+  ///
+  /// In en, this message translates to:
+  /// **'Permission checked; secure share recorded.'**
+  String get sharePermissionChecked;
+
+  /// No description provided for @uploadedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploaded by'**
+  String get uploadedBy;
+
+  /// No description provided for @documentHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Document access history'**
+  String get documentHistory;
+
+  /// No description provided for @archiveDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get archiveDocument;
+
+  /// No description provided for @deleteDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteDocument;
+
+  /// No description provided for @deleteDocumentWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this document? Access will be removed and the action recorded.'**
+  String get deleteDocumentWarning;
+
+  /// No description provided for @documentHiddenForPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Document hidden while CareBridge is inactive'**
+  String get documentHiddenForPrivacy;
 }
 
 class _AppLocalizationsDelegate

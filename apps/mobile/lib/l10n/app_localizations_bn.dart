@@ -645,7 +645,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get uploadReport => 'রিপোর্ট আপলোড করুন';
 
   @override
-  String get addEmergencyContact => 'জরুরি যোগাযোগ যোগ করুন';
+  String get addEmergencyContact => 'যোগাযোগ যোগ করুন';
 
   @override
   String get viewTimeline => 'টাইমলাইন দেখুন';
@@ -1024,4 +1024,297 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get alarmRequestHistory => 'অ্যালার্ম অনুরোধের ইতিহাস';
+
+  @override
+  String get editEmergencyContact => 'জরুরি যোগাযোগ সম্পাদনা';
+
+  @override
+  String get contactName => 'যোগাযোগের নাম';
+
+  @override
+  String get contactType => 'যোগাযোগের ধরন';
+
+  @override
+  String get primaryPhone => 'প্রধান ফোন';
+
+  @override
+  String get secondaryPhone => 'বিকল্প ফোন';
+
+  @override
+  String get whatsappNumber => 'হোয়াটসঅ্যাপ নম্বর';
+
+  @override
+  String get distance => 'যত্নপ্রাপকের কাছ থেকে দূরত্ব';
+
+  @override
+  String get availability => 'উপস্থিতির সময়';
+
+  @override
+  String get preferredContactMethod => 'পছন্দের যোগাযোগ পদ্ধতি';
+
+  @override
+  String get priorityLevel => 'অগ্রাধিকার';
+
+  @override
+  String get contactNotes => 'যোগাযোগের নোট';
+
+  @override
+  String get emergencyPermissions => 'জরুরি অনুমতি';
+
+  @override
+  String get permissionWarning =>
+      'এই ব্যক্তির যতটুকু তথ্য প্রয়োজন শুধু ততটুকুই শেয়ার করুন।';
+
+  @override
+  String get receiveEmergencyAlert => 'জরুরি সতর্কতা পাবেন';
+
+  @override
+  String get receiveMissedMedicineAlert => 'ওষুধ মিসের সতর্কতা পাবেন';
+
+  @override
+  String get viewBasicProfile => 'মৌলিক প্রোফাইল দেখতে পারবেন';
+
+  @override
+  String get viewMedicalSummary => 'চিকিৎসা সারাংশ দেখতে পারবেন';
+
+  @override
+  String get viewDocumentsPermission => 'নথি দেখতে পারবেন';
+
+  @override
+  String get viewLocation => 'অবস্থান দেখতে পারবেন';
+
+  @override
+  String get saveContact => 'যোগাযোগ সংরক্ষণ করুন';
+
+  @override
+  String get contactAdded => 'যোগ করা হয়েছে';
+
+  @override
+  String get contactInvited => 'আমন্ত্রণ পাঠানো হয়েছে';
+
+  @override
+  String get contactVerified => 'যাচাই করা হয়েছে';
+
+  @override
+  String get inactive => 'নিষ্ক্রিয়';
+
+  @override
+  String get removed => 'সরানো হয়েছে';
+
+  @override
+  String get call => 'ফোন';
+
+  @override
+  String get whatsapp => 'হোয়াটসঅ্যাপ';
+
+  @override
+  String get edit => 'সম্পাদনা';
+
+  @override
+  String callingContact(String phone) {
+    return '$phone নম্বরে ফোন করা হচ্ছে';
+  }
+
+  @override
+  String openingWhatsapp(String phone) {
+    return '$phone নম্বরের জন্য হোয়াটসঅ্যাপ খোলা হচ্ছে';
+  }
+
+  @override
+  String get emergencyAlerts => 'জরুরি সহায়তা সতর্কতা';
+
+  @override
+  String get noEmergencyAlerts => 'কোনো জরুরি সতর্কতা নেই';
+
+  @override
+  String get emergencyAlertDetail => 'জরুরি সতর্কতা';
+
+  @override
+  String get triggeredBy => 'শুরু করেছেন';
+
+  @override
+  String get acceptedBy => 'গ্রহণ করেছেন';
+
+  @override
+  String get alertTimeline => 'সতর্কতার সময়রেখা';
+
+  @override
+  String get notifyPriorityOne => 'অগ্রাধিকার ১ যোগাযোগকে জানান';
+
+  @override
+  String get goingToHelp => 'আমি সাহায্য করতে যাচ্ছি';
+
+  @override
+  String get resolveEmergency => 'জরুরি অবস্থা সমাধান করুন';
+
+  @override
+  String get uploadDocument => 'নথি আপলোড করুন';
+
+  @override
+  String get searchDocuments => 'শিরোনাম, ডাক্তার বা ট্যাগ খুঁজুন';
+
+  @override
+  String get filterDocumentType => 'নথির ধরন দিয়ে ফিল্টার';
+
+  @override
+  String get allDocuments => 'সব নথি';
+
+  @override
+  String get includeArchived => 'আর্কাইভ করা নথি দেখান';
+
+  @override
+  String get noDocuments => 'এই ফিল্টারে কোনো নথি নেই';
+
+  @override
+  String get archived => 'আর্কাইভ করা';
+
+  @override
+  String get uploadFailed => 'আপলোড ব্যর্থ। স্থানীয় খসড়া নিরাপদ আছে।';
+
+  @override
+  String get retryUpload => 'আবার চেষ্টা করুন';
+
+  @override
+  String get prescription => 'প্রেসক্রিপশন';
+
+  @override
+  String get bloodTestReport => 'রক্ত পরীক্ষার রিপোর্ট';
+
+  @override
+  String get urineTestReport => 'প্রস্রাব পরীক্ষার রিপোর্ট';
+
+  @override
+  String get ultrasound => 'আল্ট্রাসাউন্ড';
+
+  @override
+  String get dischargeSummary => 'ছাড়পত্রের সারাংশ';
+
+  @override
+  String get doctorNote => 'ডাক্তারের নোট';
+
+  @override
+  String get medicinePhoto => 'ওষুধের ছবি';
+
+  @override
+  String get hospitalBill => 'হাসপাতালের বিল';
+
+  @override
+  String get insuranceDocument => 'বীমার নথি';
+
+  @override
+  String get followUpNote => 'ফলো-আপ নোট';
+
+  @override
+  String get chooseFile => 'PDF বা ছবি বেছে নিন';
+
+  @override
+  String get choosePdf => 'PDF বেছে নিন';
+
+  @override
+  String get chooseImage => 'ছবি বেছে নিন';
+
+  @override
+  String get takePhoto => 'ছবি তুলুন';
+
+  @override
+  String get cameraPermissionDenied =>
+      'ক্যামেরার অনুমতি দেওয়া হয়নি। সেটিংসে অনুমতি দিন বা বিদ্যমান ফাইল বেছে নিন।';
+
+  @override
+  String get simulateCameraDenied => 'ক্যামেরা নিষেধ পরীক্ষা';
+
+  @override
+  String get simulateInvalidFile => 'অবৈধ ফাইল পরীক্ষা';
+
+  @override
+  String get unsupportedFileType =>
+      'ফাইলের ধরন সমর্থিত নয়। PDF, JPG বা PNG ব্যবহার করুন।';
+
+  @override
+  String get fileTooLarge => 'ফাইলটি খুব বড়। সর্বোচ্চ আকার ২০ MB।';
+
+  @override
+  String get chooseFileFirst => 'আপলোডের আগে একটি বৈধ ফাইল বেছে নিন।';
+
+  @override
+  String get documentTitle => 'নথির শিরোনাম';
+
+  @override
+  String get documentType => 'নথির ধরন';
+
+  @override
+  String get doctorName => 'ডাক্তারের নাম';
+
+  @override
+  String get hospitalClinic => 'হাসপাতাল বা ক্লিনিক';
+
+  @override
+  String get documentDate => 'নথির তারিখ';
+
+  @override
+  String get tags => 'ট্যাগ';
+
+  @override
+  String get linkedMedicine => 'সংযুক্ত ওষুধ';
+
+  @override
+  String get linkedAppointment => 'সংযুক্ত অ্যাপয়েন্টমেন্ট';
+
+  @override
+  String get linkedCondition => 'সংযুক্ত স্বাস্থ্যসমস্যা';
+
+  @override
+  String get notes => 'নোট';
+
+  @override
+  String get visibilityPermissions => 'দেখার অনুমতি';
+
+  @override
+  String get documentPermissionWarning =>
+      'শুধু নির্বাচিত পরিবারের সদস্যরা এই নথি খুলতে পারবেন। জরুরি অনুমতিতে নথির অনুমতি অন্তর্ভুক্ত নয়।';
+
+  @override
+  String get ownerRequired => 'মালিকের অনুমতি আবশ্যক';
+
+  @override
+  String get uploadAndSave => 'আপলোড ও সংরক্ষণ করুন';
+
+  @override
+  String get secureDocumentViewer => 'নিরাপদ নথি ভিউয়ার';
+
+  @override
+  String get localSecurePreview => 'সুরক্ষিত স্থানীয় ডেমো প্রিভিউ';
+
+  @override
+  String get download => 'ডাউনলোড';
+
+  @override
+  String get share => 'শেয়ার';
+
+  @override
+  String get downloadedSecurely => 'নিরাপদ ডাউনলোড প্রস্তুত।';
+
+  @override
+  String get sharePermissionChecked =>
+      'অনুমতি যাচাই করে নিরাপদ শেয়ার রেকর্ড করা হয়েছে।';
+
+  @override
+  String get uploadedBy => 'আপলোড করেছেন';
+
+  @override
+  String get documentHistory => 'নথি ব্যবহারের ইতিহাস';
+
+  @override
+  String get archiveDocument => 'আর্কাইভ';
+
+  @override
+  String get deleteDocument => 'মুছুন';
+
+  @override
+  String get deleteDocumentWarning =>
+      'এই নথি মুছবেন? প্রবেশাধিকার সরানো হবে এবং কাজটি রেকর্ড হবে।';
+
+  @override
+  String get documentHiddenForPrivacy =>
+      'কেয়ারব্রিজ নিষ্ক্রিয় থাকলে নথি লুকানো থাকে';
 }

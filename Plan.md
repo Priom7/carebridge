@@ -8,7 +8,7 @@
 | Source | `PRD.md` (all 1,964 lines reviewed) |
 | Plan version | 1.0.0 |
 | Created | 2026-06-21T14:47:04+01:00 |
-| Last updated | 2026-06-21T22:23:27+01:00 |
+| Last updated | 2026-06-22T20:44:52+01:00 |
 | Mobile decision | Flutter/Dart for iOS and Android |
 | Backend decision | Next.js with TypeScript, App Router route handlers, and background worker entrypoint |
 | File storage decision | Firebase Cloud Storage; Firebase Storage Emulator locally |
@@ -152,8 +152,8 @@ Backend feature work must not begin before G2. Planning, contract design, docume
 | UX-006 | Medicine management and schedule builder UI | DONE | 2026-06-21T21:47:03+01:00 | 2026-06-21T21:47:03+01:00 | 2026-06-21T21:56:48+01:00 | 5d | G2 |
 | UX-007 | Parent reminder, local alarm, and adherence history UI | DONE | 2026-06-21T21:58:42+01:00 | 2026-06-21T21:58:42+01:00 | 2026-06-21T22:06:58+01:00 | 5d | G2 |
 | UX-008 | Caregiver missed-reminder and remote-ring UI | DONE | 2026-06-21T22:16:28+01:00 | 2026-06-21T22:16:28+01:00 | 2026-06-21T22:23:27+01:00 | 3d | G2 |
-| UX-009 | Emergency contacts and escalation UI | NOT_STARTED | — | — | — | 5d | G2 |
-| UX-010 | Document vault and secure viewer UI | NOT_STARTED | — | — | — | 4d | G2 |
+| UX-009 | Emergency contacts and escalation UI | DONE | 2026-06-22T20:08:24+01:00 | 2026-06-22T20:08:24+01:00 | 2026-06-22T20:35:38+01:00 | 5d | G2 |
+| UX-010 | Document vault and secure viewer UI | DONE | 2026-06-22T20:37:45+01:00 | 2026-06-22T20:37:45+01:00 | 2026-06-22T20:44:52+01:00 | 4d | G2 |
 | UX-011 | Doctors, appointments, and visit workflow UI | NOT_STARTED | — | — | — | 4d | G2 |
 | UX-012 | Health logs, check-ins, and unified timeline UI | NOT_STARTED | — | — | — | 4d | G2 |
 | UX-013 | Settings, device health, privacy, export/delete, and help UI | NOT_STARTED | — | — | — | 4d | G2 |
@@ -405,19 +405,56 @@ Progress log:
 
 ### UX-009 — Emergency contacts and escalation UI
 
+Status: DONE  
+Started at: 2026-06-22T20:08:24+01:00  
+In-progress at: 2026-06-22T20:08:24+01:00  
+Done at: 2026-06-22T20:35:38+01:00  
+Estimate: 5 engineering days  
+Depends on: UX-008
+
 Demo: Add and verify a neighbour, configure priority/permissions, trigger Need Help, notify priority contacts, let one accept “I am going to help,” show live status, and resolve with notes.
 
 Acceptance: All contact fields/statuses/types exist; Call/WhatsApp/Alert work through safe platform intents or mocks; emergency-only permissions never imply document access; priority escalation and caregiver-unavailable scenarios are visually complete.
 
 Documentation: `docs/user-journeys/emergency-contact.md`, `docs/user-journeys/emergency-help.md`, `docs/diagrams/emergency-alert-state-machine.mmd`, `docs/diagrams/emergency-escalation-sequence.mmd`, `docs/user-manual/emergency-support.md`.
 
+Evidence: `flutter analyze` passed; all 23 automated workflows passed; 40 emergency contacts and 40 emergency alerts meet the fixture-scale contract; web and signed iOS release builds succeeded; the release installed and remained running on the physical iPhone as PID 24792.
+
+Progress log:
+
+- 2026-06-22T20:08:24+01:00 — Started UX-009 contact, permission, and escalation domain work.
+- 2026-06-22T20:11:00+01:00 — Added 40 deterministic emergency contacts and 40 alerts spanning priority, verification, permission, active, accepted, and resolved states.
+- 2026-06-22T20:14:00+01:00 — Implemented profile-scoped contact management, safe Call/WhatsApp mocks, least-privilege permissions, emergency inbox/detail, acceptance, timeline, and resolution.
+- 2026-06-22T20:15:00+01:00 — Connected parent Need Help to live emergency alert creation and completed bilingual localization and documentation.
+- 2026-06-22T20:17:00+01:00 — Static analysis and all 23 workflow tests passed; web and signed iOS release builds completed.
+- 2026-06-22T20:18:22+01:00 — Updated release installed successfully on the connected iPhone; launch was denied because iOS reported that the device remained locked.
+- 2026-06-22T20:35:38+01:00 — Physical iPhone launch succeeded and the installed UX-009 release was verified running as PID 24792; task completed.
+
 ### UX-010 — Document vault and secure viewer UI
+
+Status: DONE  
+Started at: 2026-06-22T20:37:45+01:00  
+In-progress at: 2026-06-22T20:37:45+01:00  
+Done at: 2026-06-22T20:44:52+01:00  
+Estimate: 4 engineering days  
+Depends on: UX-009
 
 Demo: Photograph/upload a prescription and PDF report, show progress, categorize/tag/link/filter/search, securely view/share/archive/delete, and inspect access history.
 
 Acceptance: All PRD document types/fields work; camera/file permission failures are handled; upload retry is visible; unsupported/oversized files are rejected clearly; viewer blocks accidental exposure in app-switcher screenshots where platform support permits.
 
 Documentation: `docs/user-journeys/document-vault.md`, `docs/diagrams/document-upload-flow.mmd`, `docs/user-manual/documents.md`.
+
+Evidence: `flutter analyze` passed; all 27 automated workflows passed; 40 document fixtures cover every PRD type, PDF/image formats, visibility, lifecycle, failure/retry, and audit history; web and signed iOS release builds succeeded; UX-010 installed and remained running on the physical iPhone as PID 24882.
+
+Progress log:
+
+- 2026-06-22T20:37:45+01:00 — Started UX-010 by reconciling the document requirements, fields, types, features, security, and acceptance criteria from the PRD.
+- 2026-06-22T20:39:00+01:00 — Added 40 deterministic local documents across all 15 PRD types with profile scope, permissions, links, upload failures, and access histories.
+- 2026-06-22T20:41:00+01:00 — Implemented vault search/filter/archive visibility, PDF/image/camera upload workflow, progress, validation, permission failure guidance, retry, and metadata/linking.
+- 2026-06-22T20:42:00+01:00 — Implemented secure preview, inactive-app privacy cover, permission-checked share/download mocks, archive/delete, access auditing, bilingual copy, and documentation.
+- 2026-06-22T20:43:00+01:00 — Static analysis and all 27 workflow tests passed; web and signed iOS release builds completed.
+- 2026-06-22T20:44:52+01:00 — Installed and launched the signed UX-010 release on the connected physical iPhone; verified PID 24882 and completed the task.
 
 ### UX-011 — Doctors, appointments, and visit workflow UI
 

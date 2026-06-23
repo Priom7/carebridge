@@ -37,6 +37,13 @@ class MorePage extends StatelessWidget {
           leading: const Icon(Icons.contact_phone_outlined),
           title: Text(l10n.emergencyContacts),
           trailing: const Icon(Icons.chevron_right),
+          onTap: () => context.push('/emergency-contacts'),
+        ),
+        ListTile(
+          leading: const Icon(Icons.emergency_outlined),
+          title: Text(l10n.emergencyAlerts),
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => context.push('/emergency-alerts'),
         ),
         ListTile(
           leading: const Icon(Icons.notifications_active_outlined),

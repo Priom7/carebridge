@@ -645,7 +645,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get uploadReport => 'Upload report';
 
   @override
-  String get addEmergencyContact => 'Add emergency contact';
+  String get addEmergencyContact => 'Add contact';
 
   @override
   String get viewTimeline => 'View timeline';
@@ -1023,4 +1023,297 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get alarmRequestHistory => 'Alarm request history';
+
+  @override
+  String get editEmergencyContact => 'Edit emergency contact';
+
+  @override
+  String get contactName => 'Contact name';
+
+  @override
+  String get contactType => 'Contact type';
+
+  @override
+  String get primaryPhone => 'Primary phone';
+
+  @override
+  String get secondaryPhone => 'Secondary phone';
+
+  @override
+  String get whatsappNumber => 'WhatsApp number';
+
+  @override
+  String get distance => 'Distance from care recipient';
+
+  @override
+  String get availability => 'Availability';
+
+  @override
+  String get preferredContactMethod => 'Preferred contact method';
+
+  @override
+  String get priorityLevel => 'Priority';
+
+  @override
+  String get contactNotes => 'Contact notes';
+
+  @override
+  String get emergencyPermissions => 'Emergency permissions';
+
+  @override
+  String get permissionWarning =>
+      'Share only the minimum information this person needs.';
+
+  @override
+  String get receiveEmergencyAlert => 'Receives emergency alerts';
+
+  @override
+  String get receiveMissedMedicineAlert => 'Receives missed-medicine alerts';
+
+  @override
+  String get viewBasicProfile => 'Can view basic profile';
+
+  @override
+  String get viewMedicalSummary => 'Can view medical summary';
+
+  @override
+  String get viewDocumentsPermission => 'Can view documents';
+
+  @override
+  String get viewLocation => 'Can view location';
+
+  @override
+  String get saveContact => 'Save contact';
+
+  @override
+  String get contactAdded => 'Added';
+
+  @override
+  String get contactInvited => 'Invited';
+
+  @override
+  String get contactVerified => 'Verified';
+
+  @override
+  String get inactive => 'Inactive';
+
+  @override
+  String get removed => 'Removed';
+
+  @override
+  String get call => 'Call';
+
+  @override
+  String get whatsapp => 'WhatsApp';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String callingContact(String phone) {
+    return 'Calling $phone';
+  }
+
+  @override
+  String openingWhatsapp(String phone) {
+    return 'Opening WhatsApp for $phone';
+  }
+
+  @override
+  String get emergencyAlerts => 'Emergency help alerts';
+
+  @override
+  String get noEmergencyAlerts => 'No emergency alerts';
+
+  @override
+  String get emergencyAlertDetail => 'Emergency alert';
+
+  @override
+  String get triggeredBy => 'Triggered by';
+
+  @override
+  String get acceptedBy => 'Accepted by';
+
+  @override
+  String get alertTimeline => 'Alert timeline';
+
+  @override
+  String get notifyPriorityOne => 'Notify Priority 1 contacts';
+
+  @override
+  String get goingToHelp => 'I am going to help';
+
+  @override
+  String get resolveEmergency => 'Resolve emergency';
+
+  @override
+  String get uploadDocument => 'Upload document';
+
+  @override
+  String get searchDocuments => 'Search title, doctor, or tag';
+
+  @override
+  String get filterDocumentType => 'Filter by document type';
+
+  @override
+  String get allDocuments => 'All documents';
+
+  @override
+  String get includeArchived => 'Include archived documents';
+
+  @override
+  String get noDocuments => 'No documents match these filters';
+
+  @override
+  String get archived => 'Archived';
+
+  @override
+  String get uploadFailed => 'Upload failed. The local draft is safe.';
+
+  @override
+  String get retryUpload => 'Retry';
+
+  @override
+  String get prescription => 'Prescription';
+
+  @override
+  String get bloodTestReport => 'Blood test report';
+
+  @override
+  String get urineTestReport => 'Urine test report';
+
+  @override
+  String get ultrasound => 'Ultrasound';
+
+  @override
+  String get dischargeSummary => 'Discharge summary';
+
+  @override
+  String get doctorNote => 'Doctor note';
+
+  @override
+  String get medicinePhoto => 'Medicine photo';
+
+  @override
+  String get hospitalBill => 'Hospital bill';
+
+  @override
+  String get insuranceDocument => 'Insurance document';
+
+  @override
+  String get followUpNote => 'Follow-up note';
+
+  @override
+  String get chooseFile => 'Choose a PDF or image';
+
+  @override
+  String get choosePdf => 'Choose PDF';
+
+  @override
+  String get chooseImage => 'Choose image';
+
+  @override
+  String get takePhoto => 'Take photo';
+
+  @override
+  String get cameraPermissionDenied =>
+      'Camera permission was denied. Enable it in Settings or choose an existing file.';
+
+  @override
+  String get simulateCameraDenied => 'Test camera denied';
+
+  @override
+  String get simulateInvalidFile => 'Test invalid file';
+
+  @override
+  String get unsupportedFileType =>
+      'Unsupported file type. Use PDF, JPG, or PNG.';
+
+  @override
+  String get fileTooLarge => 'File is too large. The maximum size is 20 MB.';
+
+  @override
+  String get chooseFileFirst => 'Choose a valid file before uploading.';
+
+  @override
+  String get documentTitle => 'Document title';
+
+  @override
+  String get documentType => 'Document type';
+
+  @override
+  String get doctorName => 'Doctor name';
+
+  @override
+  String get hospitalClinic => 'Hospital or clinic';
+
+  @override
+  String get documentDate => 'Document date';
+
+  @override
+  String get tags => 'Tags';
+
+  @override
+  String get linkedMedicine => 'Linked medicine';
+
+  @override
+  String get linkedAppointment => 'Linked appointment';
+
+  @override
+  String get linkedCondition => 'Linked condition';
+
+  @override
+  String get notes => 'Notes';
+
+  @override
+  String get visibilityPermissions => 'Visibility permissions';
+
+  @override
+  String get documentPermissionWarning =>
+      'Only selected family members can open this document. Emergency access does not grant document access.';
+
+  @override
+  String get ownerRequired => 'Owner access is required';
+
+  @override
+  String get uploadAndSave => 'Upload and save';
+
+  @override
+  String get secureDocumentViewer => 'Secure document viewer';
+
+  @override
+  String get localSecurePreview => 'Protected local demo preview';
+
+  @override
+  String get download => 'Download';
+
+  @override
+  String get share => 'Share';
+
+  @override
+  String get downloadedSecurely => 'Secure download prepared.';
+
+  @override
+  String get sharePermissionChecked =>
+      'Permission checked; secure share recorded.';
+
+  @override
+  String get uploadedBy => 'Uploaded by';
+
+  @override
+  String get documentHistory => 'Document access history';
+
+  @override
+  String get archiveDocument => 'Archive';
+
+  @override
+  String get deleteDocument => 'Delete';
+
+  @override
+  String get deleteDocumentWarning =>
+      'Delete this document? Access will be removed and the action recorded.';
+
+  @override
+  String get documentHiddenForPrivacy =>
+      'Document hidden while CareBridge is inactive';
 }

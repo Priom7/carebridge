@@ -168,6 +168,9 @@ class _ReminderCard extends StatelessWidget {
   void _act(BuildContext context, ReminderStatus status) {
     final l10n = AppLocalizations.of(context);
     settings.actOnReminder(reminder.id, status);
+    if (status == ReminderStatus.escalated) {
+      settings.triggerEmergencyAlert(reason: 'Parent selected I need help');
+    }
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(

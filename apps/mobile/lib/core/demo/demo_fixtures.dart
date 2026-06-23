@@ -1,5 +1,7 @@
 import '../../features/care_profiles/domain/care_profile.dart';
 import '../../features/family/domain/family_models.dart';
+import '../../features/emergency/domain/emergency_models.dart';
+import '../../features/documents/domain/health_document.dart';
 import '../../features/medicines/domain/medicine.dart';
 import '../../features/reminders/domain/reminder_event.dart';
 import '../../features/reminders/domain/alarm_request.dart';
@@ -220,4 +222,153 @@ abstract final class DemoFixtures {
       failureReason: index % 6 == 5 ? 'Device unavailable' : '',
     ),
   );
+
+  static List<EmergencyContact> emergencyContacts({int count = 40}) =>
+      List.generate(count, (index) {
+        final first = _firstNames[(index + 3) % _firstNames.length];
+        final last = _lastNames[index % _lastNames.length];
+        return EmergencyContact(
+          id: 'contact-$index',
+          careProfileId: index % 6 == 0 ? 'mother' : 'father',
+          fullName: '$first $last',
+          relationship: const [
+            'Neighbour',
+            'Cousin',
+            'Brother',
+            'Doctor',
+            'Driver',
+          ][index % 5],
+          contactType: const [
+            'Neighbour',
+            'Relative',
+            'Relative',
+            'Doctor',
+            'Driver',
+          ][index % 5],
+          primaryPhone:
+              '+880 18${(10000000 + index * 3571).toString().padLeft(8, '0')}',
+          secondaryPhone: index % 4 == 0
+              ? '+880 19${(10000000 + index * 1777).toString().padLeft(8, '0')}'
+              : '',
+          whatsappNumber:
+              '+880 18${(10000000 + index * 3571).toString().padLeft(8, '0')}',
+          email: 'contact${index + 1}@example.test',
+          address: '${10 + index} Dhanmondi Road, Dhaka',
+          distanceNote: index % 3 == 0
+              ? 'Same building'
+              : '${1 + index % 8} km away',
+          availabilityNote: index.isEven
+              ? 'Morning and evening'
+              : 'Available after 6 PM',
+          preferredContactMethod: index % 3 == 0 ? 'Call' : 'WhatsApp',
+          priorityLevel: 1 + index % 4,
+          verificationStatus: ContactVerificationStatus
+              .values[index % ContactVerificationStatus.values.length],
+          canReceiveEmergencyAlerts: true,
+          canReceiveMissedMedicineAlerts: index % 3 != 0,
+          canViewBasicProfile: true,
+          canViewMedicalSummary: index % 5 == 3,
+          canViewDocuments: false,
+          canViewLocation: index % 4 == 0,
+          notes: 'Fictional local demo contact ${index + 1}.',
+        );
+      });
+
+  static List<EmergencyAlert> emergencyAlerts({int count = 40}) =>
+      List.generate(
+        count,
+        (index) => EmergencyAlert(
+          id: 'emergency-$index',
+          careProfileId: index % 6 == 0 ? 'mother' : 'father',
+          triggeredBy: index.isEven ? 'Parent' : 'Reminder escalation',
+          reason: index % 4 == 0
+              ? 'Need Help selected'
+              : 'Missed medicine requires attention',
+          status: EmergencyAlertStatus
+              .values[index % EmergencyAlertStatus.values.length],
+          triggeredAt: DateTime(
+            2026,
+            6,
+            22,
+            18,
+          ).subtract(Duration(hours: index * 6)),
+          acceptedBy: index % 3 == 1 ? 'Rahim Ahmed' : '',
+          resolvedAt: index % 3 == 2 ? '22 Jun · 18:35' : '',
+          timeline: [
+            'Alert triggered',
+            if (index % 3 != 0) 'Primary caregiver notified',
+            if (index % 3 == 1) 'Local contact accepted',
+            if (index % 3 == 2) 'Alert resolved',
+          ],
+        ),
+      );
+
+  static List<HealthDocument> documents({
+    int count = 40,
+  }) => List.generate(count, (index) {
+    final type =
+        HealthDocumentType.values[index % HealthDocumentType.values.length];
+    final isImage = index % 3 == 0;
+    return HealthDocument(
+      id: 'document-$index',
+      careProfileId: index % 6 == 0 ? 'mother' : 'father',
+      title: const [
+        'Cardiology prescription',
+        'Quarterly blood panel',
+        'ECG report',
+        'Chest X-ray',
+        'Hospital discharge summary',
+        'Diabetes follow-up note',
+      ][index % 6],
+      type: type,
+      doctorName: const [
+        'Dr. Anjali Mehta',
+        'Dr. Farhan Khan',
+        'Dr. Neha Kapoor',
+      ][index % 3],
+      hospitalName: const [
+        'Square Hospital',
+        'Labaid Diagnostics',
+        'United Hospital',
+      ][index % 3],
+      documentDate:
+          '2026-${(1 + index % 6).toString().padLeft(2, '0')}-${(2 + index % 26).toString().padLeft(2, '0')}',
+      tags: [
+        if (index.isEven) 'routine',
+        if (index % 3 == 0) 'cardiology',
+        '2026',
+      ],
+      fileName: 'fictional_document_${index + 1}.${isImage ? 'jpg' : 'pdf'}',
+      fileSizeBytes: 280000 + index * 73000,
+      mimeType: isImage ? 'image/jpeg' : 'application/pdf',
+      notes: 'Fictional local demo document for workflow testing only.',
+      uploadedBy: index % 4 == 0 ? 'Nadia Rahman' : 'Sharif Rahman',
+      visibleTo: index % 5 == 0
+          ? ['Sharif Rahman']
+          : ['Sharif Rahman', 'Nadia Rahman'],
+      linkedMedicine: type == HealthDocumentType.prescription
+          ? 'Metformin 500mg'
+          : '',
+      linkedAppointment: index % 4 == 0 ? 'Cardiology follow-up' : '',
+      linkedCondition: index.isEven ? 'High blood pressure' : 'Diabetes',
+      status: HealthDocumentStatus
+          .values[index % HealthDocumentStatus.values.length],
+      uploadStatus: index % 9 == 8
+          ? DocumentUploadStatus.failed
+          : DocumentUploadStatus.ready,
+      uploadProgress: index % 9 == 8 ? 0.42 : 1,
+      accessHistory: [
+        DocumentAccessEvent(
+          actor: index % 4 == 0 ? 'Nadia Rahman' : 'Sharif Rahman',
+          action: 'Uploaded',
+          timestamp: '22 Jun 2026 · 10:15',
+        ),
+        const DocumentAccessEvent(
+          actor: 'Sharif Rahman',
+          action: 'Viewed securely',
+          timestamp: '22 Jun 2026 · 10:20',
+        ),
+      ],
+    );
+  });
 }

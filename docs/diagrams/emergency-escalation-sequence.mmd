@@ -1,0 +1,13 @@
+sequenceDiagram
+  actor Parent
+  participant App as CareBridge app
+  participant Caregiver
+  participant Contact as Priority 1 contact
+  Parent->>App: Tap I need help
+  App->>App: Escalate reminder and create alert
+  App-->>Caregiver: Show active emergency alert
+  App-->>Contact: Notify (demo-local)
+  Contact->>App: I am going to help
+  App-->>Caregiver: Show accepted contact and timeline
+  Caregiver->>App: Resolve emergency
+  App->>App: Record resolution and close alert

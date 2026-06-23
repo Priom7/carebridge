@@ -1,7 +1,7 @@
 # Local Demo Fixture Catalog
 
 Status: Active requirement from UX-007 onward  
-Last updated: 2026-06-21
+Last updated: 2026-06-22
 
 All fixtures are deterministic, fictional, local-only, and safe for demos/tests. List-heavy domains must contain 30–50 records when implemented.
 
@@ -13,12 +13,15 @@ All fixtures are deterministic, fictional, local-only, and safe for demos/tests.
 | Medicines | 50 | Profile scope, forms, frequencies, lifecycle states, stock levels |
 | Reminder events | 50 | Due, taken, snoozed, skipped, missed, escalated, resolved, cancelled |
 | Alarm requests | 40 | Requested, sent, delivered, opened, actioned, and failed remote alerts |
+| Emergency contacts | 40 | Profile scope, priority 1–4, verification lifecycle, availability, and least-privilege permissions |
+| Emergency alerts | 40 | Active, accepted, resolved, caregiver/parent triggers, and timeline variation |
+| Documents | 40 | All 15 PRD types, PDF/image, profile scope, visibility, links, archive/delete, upload failures, and access history |
 
 Implementation: `apps/mobile/lib/core/demo/demo_fixtures.dart` plus the two primary care profiles and three named primary medicines seeded by `AppSettings`.
 
 ## Rules for future domains
 
-- Documents, appointments/doctors, health logs/check-ins, emergency contacts/alerts, notifications, and timeline events must each add 30–50 records when their UI task begins.
+- Appointments/doctors, health logs/check-ins, notifications, and timeline events must each add 30–50 records when their UI task begins.
 - Use stable IDs and stable dates so golden/widget tests are repeatable.
 - Do not use actual patient names, contact details, documents, or health information.
 - Include happy, empty/filter, warning, failure-relevant, permission, and lifecycle variations.

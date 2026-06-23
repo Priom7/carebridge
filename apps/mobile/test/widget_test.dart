@@ -195,7 +195,14 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('More'));
     await tester.pumpAndSettle();
-    await tester.ensureVisible(find.text('Account and security'));
+    await tester.scrollUntilVisible(
+      find.text('Account and security'),
+      200,
+      scrollable: find.descendant(
+        of: find.byKey(const Key('more-page-list')),
+        matching: find.byType(Scrollable),
+      ),
+    );
     await tester.tap(find.text('Account and security'));
     await tester.pumpAndSettle();
 
