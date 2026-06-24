@@ -1,0 +1,13 @@
+stateDiagram-v2
+  [*] --> Scheduled
+  Scheduled --> ReminderSent: Reminder delivered
+  Scheduled --> Rescheduled: Date/time changed
+  ReminderSent --> Completed: Visit completed
+  ReminderSent --> Missed: Visit not attended
+  Scheduled --> Cancelled: Cancel
+  Rescheduled --> ReminderSent: New reminder delivered
+  Completed --> FollowUpRequired: Follow-up selected
+  FollowUpRequired --> Scheduled: Create follow-up visit
+  Completed --> [*]
+  Missed --> [*]
+  Cancelled --> [*]

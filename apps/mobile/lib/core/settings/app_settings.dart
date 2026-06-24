@@ -8,6 +8,7 @@ import '../../features/reminders/domain/alarm_request.dart';
 import '../../features/care_profiles/domain/care_profile.dart';
 import '../../features/emergency/domain/emergency_models.dart';
 import '../../features/documents/domain/health_document.dart';
+import '../../features/appointments/domain/appointment_models.dart';
 
 enum AppRole { caregiver, parent }
 
@@ -49,6 +50,9 @@ class AppSettings extends ChangeNotifier {
   final List<EmergencyContact> emergencyContacts = [];
   final List<EmergencyAlert> emergencyAlerts = [];
   final List<HealthDocument> documents = [];
+  final List<Doctor> doctors = [];
+  final List<Appointment> appointments = [];
+  final List<String> timelineEvents = [];
   bool demoOffline = false;
 
   bool get isDark => themeMode == ThemeMode.dark;
@@ -564,6 +568,97 @@ class AppSettings extends ChangeNotifier {
     notifyListeners();
   }
 
+  List<Doctor> doctorsForSelectedProfile() => doctors
+      .where((doctor) => doctor.linkedCareProfileIds.contains(selectedProfile))
+      .toList();
+
+  List<Appointment> appointmentsForSelectedProfile() =>
+      appointments
+          .where((appointment) => appointment.careProfileId == selectedProfile)
+          .toList()
+        ..sort((a, b) => a.dateTime.compareTo(b.dateTime));
+
+  Doctor? doctorById(String id) {
+    final matches = doctors.where((doctor) => doctor.id == id);
+    return matches.isEmpty ? null : matches.first;
+  }
+
+  void saveDoctor(Doctor doctor) {
+    final index = doctors.indexWhere((item) => item.id == doctor.id);
+    if (index < 0) {
+      doctors.add(doctor);
+    } else {
+      doctors[index] = doctor;
+    }
+    notifyListeners();
+  }
+
+  bool hasAppointmentConflict(DateTime dateTime, {String? excludingId}) =>
+      appointments.any(
+        (item) =>
+            item.id != excludingId &&
+            item.careProfileId == selectedProfile &&
+            item.status != AppointmentStatus.cancelled &&
+            item.dateTime.difference(dateTime).abs().inMinutes < 60,
+      );
+
+  void saveAppointment(Appointment appointment) {
+    final index = appointments.indexWhere((item) => item.id == appointment.id);
+    if (index < 0) {
+      appointments.add(appointment);
+      timelineEvents.insert(0, 'Appointment scheduled: ${appointment.reason}');
+    } else {
+      appointments[index] = appointment;
+      timelineEvents.insert(0, 'Appointment updated: ${appointment.reason}');
+    }
+    notifyListeners();
+  }
+
+  void rescheduleAppointment(String id, DateTime dateTime) {
+    _updateAppointment(
+      id,
+      (item) => item.copyWith(
+        dateTime: dateTime,
+        status: AppointmentStatus.rescheduled,
+      ),
+    );
+    timelineEvents.insert(0, 'Appointment rescheduled');
+  }
+
+  void completeAppointment(
+    String id, {
+    required String summary,
+    required bool followUpRequired,
+    required String followUpDate,
+  }) {
+    _updateAppointment(
+      id,
+      (item) => item.copyWith(
+        status: followUpRequired
+            ? AppointmentStatus.followUpRequired
+            : AppointmentStatus.completed,
+        visitSummary: summary,
+        followUpRequired: followUpRequired,
+        followUpDate: followUpDate,
+      ),
+    );
+    timelineEvents.insert(0, 'Appointment completed and visit notes added');
+  }
+
+  void setAppointmentStatus(String id, AppointmentStatus status) {
+    _updateAppointment(id, (item) => item.copyWith(status: status));
+  }
+
+  void _updateAppointment(
+    String id,
+    Appointment Function(Appointment appointment) update,
+  ) {
+    final index = appointments.indexWhere((item) => item.id == id);
+    if (index < 0) return;
+    appointments[index] = update(appointments[index]);
+    notifyListeners();
+  }
+
   void archiveCareProfile(String id) {
     final index = careProfiles.indexWhere((item) => item.id == id);
     if (index < 0) return;
@@ -596,6 +691,8 @@ class AppSettings extends ChangeNotifier {
     emergencyContacts.addAll(DemoFixtures.emergencyContacts());
     emergencyAlerts.addAll(DemoFixtures.emergencyAlerts());
     documents.addAll(DemoFixtures.documents());
+    doctors.addAll(DemoFixtures.doctors());
+    appointments.addAll(DemoFixtures.appointments());
   }
 
   static CareProfile _fatherProfile() => const CareProfile(

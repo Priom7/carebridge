@@ -8,7 +8,7 @@
 | Source | `PRD.md` (all 1,964 lines reviewed) |
 | Plan version | 1.0.0 |
 | Created | 2026-06-21T14:47:04+01:00 |
-| Last updated | 2026-06-22T20:44:52+01:00 |
+| Last updated | 2026-06-23T18:27:21+01:00 |
 | Mobile decision | Flutter/Dart for iOS and Android |
 | Backend decision | Next.js with TypeScript, App Router route handlers, and background worker entrypoint |
 | File storage decision | Firebase Cloud Storage; Firebase Storage Emulator locally |
@@ -154,7 +154,7 @@ Backend feature work must not begin before G2. Planning, contract design, docume
 | UX-008 | Caregiver missed-reminder and remote-ring UI | DONE | 2026-06-21T22:16:28+01:00 | 2026-06-21T22:16:28+01:00 | 2026-06-21T22:23:27+01:00 | 3d | G2 |
 | UX-009 | Emergency contacts and escalation UI | DONE | 2026-06-22T20:08:24+01:00 | 2026-06-22T20:08:24+01:00 | 2026-06-22T20:35:38+01:00 | 5d | G2 |
 | UX-010 | Document vault and secure viewer UI | DONE | 2026-06-22T20:37:45+01:00 | 2026-06-22T20:37:45+01:00 | 2026-06-22T20:44:52+01:00 | 4d | G2 |
-| UX-011 | Doctors, appointments, and visit workflow UI | NOT_STARTED | — | — | — | 4d | G2 |
+| UX-011 | Doctors, appointments, and visit workflow UI | IN_PROGRESS | 2026-06-23T18:19:37+01:00 | 2026-06-23T18:19:37+01:00 | — | 4d | G2 |
 | UX-012 | Health logs, check-ins, and unified timeline UI | NOT_STARTED | — | — | — | 4d | G2 |
 | UX-013 | Settings, device health, privacy, export/delete, and help UI | NOT_STARTED | — | — | — | 4d | G2 |
 | UX-014 | Complete UI state matrix, polish, golden tests, and UX sign-off | NOT_STARTED | — | — | — | 5d | G2 |
@@ -458,11 +458,29 @@ Progress log:
 
 ### UX-011 — Doctors, appointments, and visit workflow UI
 
+Status: IN_PROGRESS  
+Started at: 2026-06-23T18:19:37+01:00  
+In-progress at: 2026-06-23T18:19:37+01:00  
+Done at: —  
+Estimate: 4 engineering days  
+Depends on: UX-010
+
 Demo: Add a doctor, schedule/reschedule a timezone-aware visit, prepare questions/reports, complete the appointment, add visit notes, and schedule follow-up.
 
 Acceptance: Every doctor/appointment field and status is supported; conflicts and past dates are handled; appointment event appears on the timeline; doctor visit pack preview is designed as a future-compatible placeholder, not claimed as MVP functionality.
 
 Documentation: `docs/user-journeys/doctor-appointment.md`, `docs/diagrams/appointment-lifecycle.mmd`, `docs/user-manual/doctors-and-appointments.md`.
+
+Evidence in progress: `flutter analyze` passed; all 31 automated workflows passed; 30 doctor and 40 appointment fixtures cover all PRD fields and statuses; web and signed iOS release builds succeeded; physical iPhone installation is waiting because CoreDevice reports the previously connected phone as unavailable.
+
+Progress log:
+
+- 2026-06-23T18:19:37+01:00 — Started UX-011 and reconciled doctor, appointment, visit-pack, lifecycle, and acceptance requirements from the PRD.
+- 2026-06-23T18:21:00+01:00 — Added 30 deterministic doctors and 40 appointments with every PRD status, timezone/location, questions, reports, attachments, summaries, and follow-ups.
+- 2026-06-23T18:23:00+01:00 — Implemented profile-scoped doctor directory, doctor creation, conflict/past-date-safe scheduling, and bilingual appointment lists/details.
+- 2026-06-23T18:24:00+01:00 — Implemented rescheduling, future-compatible visit-pack preview, completion notes, follow-up capture, and appointment timeline events.
+- 2026-06-23T18:25:00+01:00 — Completed workflow tests and documentation; static analysis and all 31 tests passed.
+- 2026-06-23T18:27:21+01:00 — Web and signed iOS release builds succeeded; installation paused because CoreDevice lists the physical iPhone as unavailable.
 
 ### UX-012 — Health logs, check-ins, and unified timeline UI
 

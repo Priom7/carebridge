@@ -1317,4 +1317,100 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get documentHiddenForPrivacy =>
       'কেয়ারব্রিজ নিষ্ক্রিয় থাকলে নথি লুকানো থাকে';
+
+  @override
+  String get addAppointment => 'অ্যাপয়েন্টমেন্ট যোগ করুন';
+
+  @override
+  String get addDoctor => 'ডাক্তার যোগ করুন';
+
+  @override
+  String get doctors => 'ডাক্তারগণ';
+
+  @override
+  String get unknownDoctor => 'অজানা ডাক্তার';
+
+  @override
+  String get speciality => 'বিশেষত্ব';
+
+  @override
+  String get visitingHours => 'দেখার সময়';
+
+  @override
+  String get saveDoctor => 'ডাক্তার সংরক্ষণ করুন';
+
+  @override
+  String get appointmentDate => 'অ্যাপয়েন্টমেন্টের তারিখ';
+
+  @override
+  String get appointmentTime => 'অ্যাপয়েন্টমেন্টের সময়';
+
+  @override
+  String get location => 'স্থান';
+
+  @override
+  String get reasonForVisit => 'দেখানোর কারণ';
+
+  @override
+  String get questionsForDoctor => 'ডাক্তারের জন্য প্রশ্ন';
+
+  @override
+  String get requiredReports => 'প্রয়োজনীয় রিপোর্ট';
+
+  @override
+  String get attachments => 'সংযুক্তি';
+
+  @override
+  String get caregiverNotes => 'পরিচর্যাকারীর নোট';
+
+  @override
+  String get onePerLine => 'প্রতি লাইনে একটি';
+
+  @override
+  String get scheduleAppointment => 'অ্যাপয়েন্টমেন্ট নির্ধারণ করুন';
+
+  @override
+  String get invalidAppointmentDate => 'সঠিক তারিখ ও সময় লিখুন।';
+
+  @override
+  String get pastAppointmentError =>
+      'অতীতের সময়ে অ্যাপয়েন্টমেন্ট করা যায় না।';
+
+  @override
+  String get appointmentConflict =>
+      'এই যত্ন প্রোফাইলের এক ঘণ্টার মধ্যে আরেকটি অ্যাপয়েন্টমেন্ট আছে।';
+
+  @override
+  String get appointmentDetails => 'অ্যাপয়েন্টমেন্টের বিবরণ';
+
+  @override
+  String get rescheduled => 'পুনর্নির্ধারিত';
+
+  @override
+  String get followUpRequired => 'ফলো-আপ প্রয়োজন';
+
+  @override
+  String get doctorVisitPack => 'ডাক্তার ভিজিট প্যাক';
+
+  @override
+  String get visitPackFutureNote =>
+      'শুধু প্রিভিউ। ভবিষ্যৎ সংস্করণে PDF রপ্তানি থাকবে।';
+
+  @override
+  String get currentMedicines => 'বর্তমান ওষুধ';
+
+  @override
+  String get rescheduleSevenDays => '৭ দিন পরে পুনর্নির্ধারণ';
+
+  @override
+  String get completeVisit => 'ভিজিট সম্পন্ন করুন';
+
+  @override
+  String get visitSummary => 'ভিজিটের সারাংশ';
+
+  @override
+  String get followUpDate => 'ফলো-আপের তারিখ';
+
+  @override
+  String get saveVisitNotes => 'ভিজিট নোট সংরক্ষণ করুন';
 }

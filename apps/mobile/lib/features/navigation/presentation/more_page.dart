@@ -55,6 +55,7 @@ class MorePage extends StatelessWidget {
           leading: const Icon(Icons.calendar_month_outlined),
           title: Text(l10n.appointments),
           trailing: const Icon(Icons.chevron_right),
+          onTap: () => context.push('/appointments'),
         ),
         ListTile(
           leading: const Icon(Icons.settings_outlined),

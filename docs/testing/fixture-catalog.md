@@ -16,12 +16,14 @@ All fixtures are deterministic, fictional, local-only, and safe for demos/tests.
 | Emergency contacts | 40 | Profile scope, priority 1–4, verification lifecycle, availability, and least-privilege permissions |
 | Emergency alerts | 40 | Active, accepted, resolved, caregiver/parent triggers, and timeline variation |
 | Documents | 40 | All 15 PRD types, PDF/image, profile scope, visibility, links, archive/delete, upload failures, and access history |
+| Doctors | 30 | Specialities, hospitals, visiting hours, contacts, notes, and linked care profiles |
+| Appointments | 40 | Every PRD status, timezone/location, questions, reports, attachments, summaries, and follow-ups |
 
 Implementation: `apps/mobile/lib/core/demo/demo_fixtures.dart` plus the two primary care profiles and three named primary medicines seeded by `AppSettings`.
 
 ## Rules for future domains
 
-- Appointments/doctors, health logs/check-ins, notifications, and timeline events must each add 30–50 records when their UI task begins.
+- Health logs/check-ins, notifications, and timeline events must each add 30–50 records when their UI task begins.
 - Use stable IDs and stable dates so golden/widget tests are repeatable.
 - Do not use actual patient names, contact details, documents, or health information.
 - Include happy, empty/filter, warning, failure-relevant, permission, and lifecycle variations.

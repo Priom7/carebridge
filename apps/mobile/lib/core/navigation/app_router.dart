@@ -24,6 +24,11 @@ import '../../features/emergency/presentation/emergency_contacts_page.dart';
 import '../../features/documents/presentation/document_upload_page.dart';
 import '../../features/documents/presentation/document_vault_page.dart';
 import '../../features/documents/presentation/document_viewer_page.dart';
+import '../../features/appointments/presentation/appointment_detail_page.dart';
+import '../../features/appointments/presentation/appointment_form_page.dart';
+import '../../features/appointments/presentation/appointments_page.dart';
+import '../../features/appointments/presentation/doctor_form_page.dart';
+import '../../features/appointments/presentation/doctors_page.dart';
 import '../../features/reminders/presentation/reminder_action_page.dart';
 import '../../features/reminders/presentation/reminder_history_page.dart';
 import '../../features/reminders/presentation/caregiver_alert_detail_page.dart';
@@ -162,6 +167,10 @@ GoRouter createAppRouter(AppSettings settings) {
             path: '/emergency-alerts',
             builder: (_, _) => EmergencyAlertsPage(settings: settings),
           ),
+          GoRoute(
+            path: '/appointments',
+            builder: (_, _) => AppointmentsPage(settings: settings),
+          ),
         ],
       ),
       GoRoute(
@@ -186,6 +195,25 @@ GoRouter createAppRouter(AppSettings settings) {
           settings: settings,
           alertId: state.pathParameters['id']!,
         ),
+      ),
+      GoRoute(
+        path: '/appointments/new',
+        builder: (_, _) => AppointmentFormPage(settings: settings),
+      ),
+      GoRoute(
+        path: '/appointments/:id',
+        builder: (_, state) => AppointmentDetailPage(
+          settings: settings,
+          appointmentId: state.pathParameters['id']!,
+        ),
+      ),
+      GoRoute(
+        path: '/doctors',
+        builder: (_, _) => DoctorsPage(settings: settings),
+      ),
+      GoRoute(
+        path: '/doctors/new',
+        builder: (_, _) => DoctorFormPage(settings: settings),
       ),
       GoRoute(
         path: '/documents/upload',

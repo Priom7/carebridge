@@ -5,6 +5,7 @@ import '../../features/documents/domain/health_document.dart';
 import '../../features/medicines/domain/medicine.dart';
 import '../../features/reminders/domain/reminder_event.dart';
 import '../../features/reminders/domain/alarm_request.dart';
+import '../../features/appointments/domain/appointment_models.dart';
 
 abstract final class DemoFixtures {
   static const _firstNames = [
@@ -371,4 +372,80 @@ abstract final class DemoFixtures {
       ],
     );
   });
+
+  static List<Doctor> doctors({int count = 30}) => List.generate(
+    count,
+    (index) => Doctor(
+      id: 'doctor-$index',
+      name:
+          'Dr. ${_firstNames[(index + 5) % _firstNames.length]} ${_lastNames[(index + 2) % _lastNames.length]}',
+      speciality: const [
+        'Cardiology',
+        'Endocrinology',
+        'Orthopaedics',
+        'Neurology',
+        'General medicine',
+      ][index % 5],
+      hospital: const [
+        'Square Hospital',
+        'United Hospital',
+        'Labaid Hospital',
+      ][index % 3],
+      phone: '+880 17${(10000000 + index * 923).toString().padLeft(8, '0')}',
+      email: 'doctor${index + 1}@example.test',
+      address: '${12 + index} Health Avenue, Dhaka',
+      visitingHours: index.isEven
+          ? 'Sun–Thu · 17:00–20:00'
+          : 'Mon, Wed · 09:00–13:00',
+      notes: 'Fictional demo clinician. Confirm hours before travel.',
+      linkedCareProfileIds: index % 4 == 0
+          ? ['father', 'mother']
+          : [index % 5 == 0 ? 'mother' : 'father'],
+    ),
+  );
+
+  static List<Appointment> appointments({int count = 40}) => List.generate(
+    count,
+    (index) => Appointment(
+      id: 'appointment-$index',
+      careProfileId: index % 6 == 0 ? 'mother' : 'father',
+      doctorId: 'doctor-${index % 30}',
+      dateTime: DateTime(
+        2026,
+        6,
+        25,
+        10,
+      ).add(Duration(days: index * 5, hours: index % 7)),
+      timezone: 'Asia/Dhaka',
+      location: const [
+        'Square Hospital, Dhaka',
+        'Video consultation',
+        'United Hospital, Dhaka',
+      ][index % 3],
+      reason: const [
+        'Blood pressure follow-up',
+        'Diabetes review',
+        'Knee pain review',
+        'Routine check-up',
+      ][index % 4],
+      questions: [
+        'Are current medicines still appropriate?',
+        if (index.isEven) 'Should we change the monitoring schedule?',
+      ],
+      requiredReports: [
+        'Recent blood panel',
+        if (index % 3 == 0) 'Blood pressure log',
+      ],
+      status: AppointmentStatus.values[index % AppointmentStatus.values.length],
+      followUpRequired: index % 4 == 0,
+      followUpDate: index % 4 == 0
+          ? '2026-09-${(1 + index % 25).toString().padLeft(2, '0')}'
+          : '',
+      visitSummary: index % 7 == 2
+          ? 'Continue current treatment and monitor symptoms.'
+          : '',
+      attachments: index.isEven ? ['fictional_report_${index + 1}.pdf'] : [],
+      caregiverNotes: 'Ask the doctor to write instructions clearly.',
+    ),
+  );
 }

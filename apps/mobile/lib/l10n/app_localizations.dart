@@ -2593,6 +2593,192 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Document hidden while CareBridge is inactive'**
   String get documentHiddenForPrivacy;
+
+  /// No description provided for @addAppointment.
+  ///
+  /// In en, this message translates to:
+  /// **'Add appointment'**
+  String get addAppointment;
+
+  /// No description provided for @addDoctor.
+  ///
+  /// In en, this message translates to:
+  /// **'Add doctor'**
+  String get addDoctor;
+
+  /// No description provided for @doctors.
+  ///
+  /// In en, this message translates to:
+  /// **'Doctors'**
+  String get doctors;
+
+  /// No description provided for @unknownDoctor.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown doctor'**
+  String get unknownDoctor;
+
+  /// No description provided for @speciality.
+  ///
+  /// In en, this message translates to:
+  /// **'Speciality'**
+  String get speciality;
+
+  /// No description provided for @visitingHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Visiting hours'**
+  String get visitingHours;
+
+  /// No description provided for @saveDoctor.
+  ///
+  /// In en, this message translates to:
+  /// **'Save doctor'**
+  String get saveDoctor;
+
+  /// No description provided for @appointmentDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment date'**
+  String get appointmentDate;
+
+  /// No description provided for @appointmentTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment time'**
+  String get appointmentTime;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @reasonForVisit.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason for visit'**
+  String get reasonForVisit;
+
+  /// No description provided for @questionsForDoctor.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions for the doctor'**
+  String get questionsForDoctor;
+
+  /// No description provided for @requiredReports.
+  ///
+  /// In en, this message translates to:
+  /// **'Required reports'**
+  String get requiredReports;
+
+  /// No description provided for @attachments.
+  ///
+  /// In en, this message translates to:
+  /// **'Attachments'**
+  String get attachments;
+
+  /// No description provided for @caregiverNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Caregiver notes'**
+  String get caregiverNotes;
+
+  /// No description provided for @onePerLine.
+  ///
+  /// In en, this message translates to:
+  /// **'One item per line'**
+  String get onePerLine;
+
+  /// No description provided for @scheduleAppointment.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule appointment'**
+  String get scheduleAppointment;
+
+  /// No description provided for @invalidAppointmentDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid date and time.'**
+  String get invalidAppointmentDate;
+
+  /// No description provided for @pastAppointmentError.
+  ///
+  /// In en, this message translates to:
+  /// **'Appointments cannot be scheduled in the past.'**
+  String get pastAppointmentError;
+
+  /// No description provided for @appointmentConflict.
+  ///
+  /// In en, this message translates to:
+  /// **'This care profile already has an appointment within one hour.'**
+  String get appointmentConflict;
+
+  /// No description provided for @appointmentDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment details'**
+  String get appointmentDetails;
+
+  /// No description provided for @rescheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Rescheduled'**
+  String get rescheduled;
+
+  /// No description provided for @followUpRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow-up required'**
+  String get followUpRequired;
+
+  /// No description provided for @doctorVisitPack.
+  ///
+  /// In en, this message translates to:
+  /// **'Doctor visit pack'**
+  String get doctorVisitPack;
+
+  /// No description provided for @visitPackFutureNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview only. PDF export will be available in a future version.'**
+  String get visitPackFutureNote;
+
+  /// No description provided for @currentMedicines.
+  ///
+  /// In en, this message translates to:
+  /// **'Current medicines'**
+  String get currentMedicines;
+
+  /// No description provided for @rescheduleSevenDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Reschedule by 7 days'**
+  String get rescheduleSevenDays;
+
+  /// No description provided for @completeVisit.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete visit'**
+  String get completeVisit;
+
+  /// No description provided for @visitSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Visit summary'**
+  String get visitSummary;
+
+  /// No description provided for @followUpDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow-up date'**
+  String get followUpDate;
+
+  /// No description provided for @saveVisitNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Save visit notes'**
+  String get saveVisitNotes;
 }
 
 class _AppLocalizationsDelegate

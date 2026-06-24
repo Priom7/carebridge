@@ -1316,4 +1316,100 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get documentHiddenForPrivacy =>
       'Document hidden while CareBridge is inactive';
+
+  @override
+  String get addAppointment => 'Add appointment';
+
+  @override
+  String get addDoctor => 'Add doctor';
+
+  @override
+  String get doctors => 'Doctors';
+
+  @override
+  String get unknownDoctor => 'Unknown doctor';
+
+  @override
+  String get speciality => 'Speciality';
+
+  @override
+  String get visitingHours => 'Visiting hours';
+
+  @override
+  String get saveDoctor => 'Save doctor';
+
+  @override
+  String get appointmentDate => 'Appointment date';
+
+  @override
+  String get appointmentTime => 'Appointment time';
+
+  @override
+  String get location => 'Location';
+
+  @override
+  String get reasonForVisit => 'Reason for visit';
+
+  @override
+  String get questionsForDoctor => 'Questions for the doctor';
+
+  @override
+  String get requiredReports => 'Required reports';
+
+  @override
+  String get attachments => 'Attachments';
+
+  @override
+  String get caregiverNotes => 'Caregiver notes';
+
+  @override
+  String get onePerLine => 'One item per line';
+
+  @override
+  String get scheduleAppointment => 'Schedule appointment';
+
+  @override
+  String get invalidAppointmentDate => 'Enter a valid date and time.';
+
+  @override
+  String get pastAppointmentError =>
+      'Appointments cannot be scheduled in the past.';
+
+  @override
+  String get appointmentConflict =>
+      'This care profile already has an appointment within one hour.';
+
+  @override
+  String get appointmentDetails => 'Appointment details';
+
+  @override
+  String get rescheduled => 'Rescheduled';
+
+  @override
+  String get followUpRequired => 'Follow-up required';
+
+  @override
+  String get doctorVisitPack => 'Doctor visit pack';
+
+  @override
+  String get visitPackFutureNote =>
+      'Preview only. PDF export will be available in a future version.';
+
+  @override
+  String get currentMedicines => 'Current medicines';
+
+  @override
+  String get rescheduleSevenDays => 'Reschedule by 7 days';
+
+  @override
+  String get completeVisit => 'Complete visit';
+
+  @override
+  String get visitSummary => 'Visit summary';
+
+  @override
+  String get followUpDate => 'Follow-up date';
+
+  @override
+  String get saveVisitNotes => 'Save visit notes';
 }
